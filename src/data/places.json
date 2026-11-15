@@ -1,0 +1,220 @@
+[
+  {
+    "id": "horizon",
+    "name": "Moonbase Horizon",
+    "kind": "base",
+    "where": "Rim of Shackleton crater, near the south pole",
+    "lat": -89.4,
+    "lon": 130,
+    "missions": [
+      1,
+      2,
+      7,
+      3,
+      4,
+      15,
+      5,
+      6,
+      12,
+      8,
+      9,
+      14
+    ],
+    "about": "Your home base.",
+    "sourceId": "TODO_VERIFY",
+    "world": "moon"
+  },
+  {
+    "id": "apollo11",
+    "name": "Apollo 11 landing site",
+    "kind": "landmark",
+    "where": "Sea of Tranquility",
+    "lat": 0.674,
+    "lon": 23.473,
+    "missions": [],
+    "about": "Where the first people walked on the Moon, in 1969.",
+    "sourceId": "TODO_VERIFY",
+    "world": "moon"
+  },
+  {
+    "id": "apollo17",
+    "name": "Apollo 17 landing site",
+    "kind": "landmark",
+    "where": "Taurus-Littrow valley",
+    "lat": 20.191,
+    "lon": 30.772,
+    "missions": [],
+    "about": "The last Apollo landing, in 1972.",
+    "sourceId": "TODO_VERIFY",
+    "world": "moon"
+  },
+  {
+    "id": "tycho",
+    "name": "Tycho crater",
+    "kind": "landmark",
+    "where": "Southern highlands",
+    "lat": -43.31,
+    "lon": -11.36,
+    "missions": [],
+    "about": "A bright crater with long rays you can see on the map.",
+    "sourceId": "TODO_VERIFY",
+    "world": "moon"
+  },
+  {
+    "id": "copernicus",
+    "name": "Copernicus crater",
+    "kind": "landmark",
+    "where": "Ocean of Storms",
+    "lat": 9.62,
+    "lon": -20.08,
+    "missions": [],
+    "about": "A large crater with terraced walls.",
+    "sourceId": "TODO_VERIFY",
+    "world": "moon"
+  },
+  {
+    "id": "gateway",
+    "name": "Gateway station",
+    "kind": "station",
+    "where": "In orbit around the Moon",
+    "lat": -55,
+    "lon": 35,
+    "missions": [],
+    "about": "A space station NASA and its partners plan to put around the Moon. In this game it is much closer to the Moon than its real orbit. Dock to pick up astronauts.",
+    "sourceId": "TODO_VERIFY",
+    "world": "moon"
+  },
+  {
+    "id": "mars-orbit",
+    "world": "mars",
+    "name": "Mars orbit",
+    "kind": "orbit",
+    "where": "High above Mars",
+    "lat": 10,
+    "lon": -150,
+    "missions": [],
+    "about": "Where your ship arrives after the long trip from Earth. Fly down to the base from here.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "aster9",
+    "world": "mars",
+    "name": "ASTER-9 base",
+    "kind": "base",
+    "where": "Plains west of Olympus Mons (game base)",
+    "lat": 18,
+    "lon": -142,
+    "missions": [
+      101,
+      102,
+      104
+    ],
+    "about": "Your Mars base. In this game only: no real base is there.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "gale",
+    "world": "mars",
+    "name": "Gale crater",
+    "kind": "landmark",
+    "where": "Near the Martian equator",
+    "lat": -5.4,
+    "lon": 137.8,
+    "missions": [],
+    "about": "Where NASA's Curiosity rover landed.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "insight",
+    "world": "mars",
+    "name": "InSight landing site",
+    "kind": "landmark",
+    "where": "Elysium Planitia",
+    "lat": 4.5,
+    "lon": 135.6,
+    "missions": [],
+    "about": "Where NASA's InSight lander studied Mars' interior.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "jezero",
+    "world": "mars",
+    "name": "Jezero crater",
+    "kind": "landmark",
+    "where": "Northern hemisphere",
+    "lat": 18.4,
+    "lon": 77.5,
+    "missions": [],
+    "about": "Where NASA's Perseverance rover landed.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "olympus",
+    "world": "mars",
+    "name": "Olympus Mons",
+    "kind": "landmark",
+    "where": "Tharsis region",
+    "lat": 18.65,
+    "lon": -133.8,
+    "missions": [],
+    "about": "A giant volcano.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "valles",
+    "world": "mars",
+    "name": "Valles Marineris",
+    "kind": "landmark",
+    "where": "Along the equator",
+    "lat": -13.9,
+    "lon": -59.2,
+    "missions": [],
+    "about": "A huge system of canyons.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "camp-foot",
+    "world": "mars",
+    "name": "Foot Camp",
+    "kind": "camp",
+    "where": "West flank of Olympus Mons (game camp)",
+    "lat": 18.3,
+    "lon": -139,
+    "missions": [
+      105
+    ],
+    "about": "The first camp at the foot of the volcano. The rover drives the crew up from here.",
+    "sourceId": "TODO_VERIFY",
+    "heightKm": null
+  },
+  {
+    "id": "camp-halfway",
+    "world": "mars",
+    "name": "Halfway Camp",
+    "kind": "camp",
+    "where": "West flank of Olympus Mons (game camp)",
+    "lat": 18.5,
+    "lon": -136.6,
+    "missions": [
+      108
+    ],
+    "about": "Halfway up the slope. There is less air above you to block radiation.",
+    "sourceId": "TODO_VERIFY",
+    "heightKm": null
+  },
+  {
+    "id": "camp-rim",
+    "world": "mars",
+    "name": "Crater Rim",
+    "kind": "camp",
+    "where": "West flank of Olympus Mons (game camp)",
+    "lat": 18.6,
+    "lon": -134.8,
+    "missions": [
+      114
+    ],
+    "about": "The edge of the summit crater, where Olympus Station will stand.",
+    "sourceId": "TODO_VERIFY",
+    "heightKm": null
+  }
+]

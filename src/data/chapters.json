@@ -1,0 +1,8 @@
+[
+  { "id": 1, "world": "moon", "title": "First Light", "missions": [1, 2, 7], "teaches": "Power and air", "flightIn": "earth-moon" },
+  { "id": 2, "world": "moon", "title": "Living Off the Land", "missions": [3, 4, 15], "teaches": "Water, food, health" },
+  { "id": 3, "world": "moon", "title": "Keep It Running", "missions": [5, 6, 12], "teaches": "Maintenance" },
+  { "id": 4, "world": "moon", "title": "The Storm", "missions": [8, 9, 14], "teaches": "Radiation, deciding under pressure" },
+  { "id": 5, "world": "mars", "title": "Red Landing", "missions": [101, 102, 104], "teaches": "Starting again with what you brought", "flightIn": "moon-mars" },
+  { "id": 6, "world": "mars", "title": "The Climb", "missions": [105, 108, 114], "teaches": "The final push, then the ending" }
+]

@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-usb
+.env
+.env.local
+*.log
+.DS_Store
+coverage
+.gstack/
+
+# Handoff zip contents (bundle, patches): not part of the game
+_handoff/
+
+.claude/settings.local.json

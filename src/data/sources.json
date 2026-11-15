@@ -1,0 +1,247 @@
+[
+  {
+    "id": "nasa-open-apis",
+    "title": "NASA Open APIs",
+    "org": "NASA",
+    "url": "https://api.nasa.gov/",
+    "usedFor": "API key and the DONKI gateway"
+  },
+  {
+    "id": "donki",
+    "title": "DONKI (Space Weather Database of Notifications, Knowledge, Information), NASA Community Coordinated Modeling Center",
+    "org": "NASA",
+    "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI/",
+    "usedFor": "Live Space Weather risk level"
+  },
+  {
+    "id": "radlab",
+    "title": "RadLab, OSDR Radiation Dosimetry Database",
+    "org": "NASA",
+    "url": "https://visualization.osdr.nasa.gov/radlab/gui/data-api/",
+    "usedFor": "Real ISS radiation dose facts (Why? cards)"
+  },
+  {
+    "id": "osdr",
+    "title": "NASA Open Science Data Repository (OSDR)",
+    "org": "NASA",
+    "url": "https://osdr.nasa.gov/bio/repo/",
+    "usedFor": "Real astronaut health findings (Crew Why? cards)"
+  },
+  {
+    "id": "csa-food-production",
+    "title": "Food production on the Moon and in remote areas",
+    "org": "CSA",
+    "url": "https://www.asc-csa.gc.ca/eng/youth-educators/toolkits/food-production/",
+    "usedFor": "Greenhouse facts"
+  },
+  {
+    "id": "csa-stem-resources",
+    "title": "Space resources for STEM and youth organizations",
+    "org": "CSA",
+    "url": "https://www.asc-csa.gc.ca/eng/youth-educators/resources-stem-and-youth-organizations.asp",
+    "usedFor": "Tone and level for ages 7–12"
+  },
+  {
+    "id": "nasa-insight-mission",
+    "title": "NASA: InSight Mission",
+    "org": "NASA",
+    "url": "",
+    "usedFor": "Mission 1 Why? (solar panels and batteries on Mars)"
+  },
+  {
+    "id": "nasa-life-support",
+    "title": "NASA: Environmental Control and Life Support Systems (ECLSS)",
+    "org": "NASA",
+    "url": "https://www.nasa.gov/reference/environmental-control-and-life-support-systems-eclss/",
+    "usedFor": "Mission 2 Why? (oxygen, carbon dioxide, safe air)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-plants-in-space",
+    "title": "NASA: Growing plants in space",
+    "org": "NASA",
+    "url": "https://www.nasa.gov/exploration-research-and-technology/growing-plants-in-space/",
+    "usedFor": "Mission 4 Why? (vegetables grown on the ISS)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-lunar-dust",
+    "title": "NASA: NASA's dust shield successfully repels lunar regolith on Moon",
+    "org": "NASA",
+    "url": "https://www.nasa.gov/image-article/nasas-dust-shield-successfully-repels-lunar-regolith-on-moon/",
+    "usedFor": "Mission 5 Why? (dust shield tested on the Moon)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). Wording changed per B10."
+  },
+  {
+    "id": "nasa-solar-storms-moon",
+    "title": "NASA Science: How NASA will protect astronauts from space radiation at the Moon",
+    "org": "NASA",
+    "url": "https://science.nasa.gov/science-research/heliophysics/how-nasa-will-protect-astronauts-from-space-radiation-at-the-moon/",
+    "usedFor": "Mission 8 Why? (solar particles and shelters)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-solar-storm-effects",
+    "title": "NASA Science: Solar storms and flares",
+    "org": "NASA",
+    "url": "https://science.nasa.gov/sun/solar-storms-and-flares/",
+    "usedFor": "Mission 14 Why? (solar storms, electronics, communications)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-cgi-moon-kit",
+    "title": "NASA Scientific Visualization Studio: CGI Moon Kit (LRO colour map, public domain)",
+    "org": "NASA",
+    "url": "https://svs.gsfc.nasa.gov/4720/",
+    "usedFor": "The Moon's surface on the map and in flight; Moon radius 1737.4 km for the altitude display",
+    "checkedBy": "Copied via Wikimedia Commons 'File:CGI Moon Kit - Lroc color poles.tif' (marked public domain, credit NASA SVS). Team to confirm."
+  },
+  {
+    "id": "nasa-gateway",
+    "title": "NASA: Gateway",
+    "org": "NASA",
+    "url": "",
+    "usedFor": "Gateway station on the map (pick up astronauts)"
+  },
+  {
+    "id": "nasa-insight-solar-power",
+    "title": "NASA: InSight Solar Power Data",
+    "org": "NASA",
+    "url": "",
+    "usedFor": "Mission 5 Why? (dust and InSight's power)"
+  },
+  {
+    "id": "nasa-mars-solar-storm-2024",
+    "title": "NASA: Real 2024 Mars Solar Storm",
+    "org": "NASA",
+    "url": "",
+    "usedFor": "Mission 8 Why? (Curiosity radiation surge, May 2024)"
+  },
+  {
+    "id": "nasa-space-radiation",
+    "title": "NASA: Space Radiation Hazards",
+    "org": "NASA",
+    "url": "",
+    "usedFor": "Mission 14 Why? (radiation and solar storms)"
+  },
+  {
+    "id": "nasa-usgs-mars-viking",
+    "title": "NASA / JPL / USGS: Mars Viking MDIM 2.1 colour mosaic (public domain)",
+    "org": "NASA",
+    "url": "https://astrogeology.usgs.gov/search/details/Mars/Viking/MDIM21/Mars_Viking_MDIM21_ClrMosaic_global_232m/cub",
+    "usedFor": "The surface of Mars on the Mars map, in flight and in the Solar System",
+    "checkedBy": "Downloaded via Wikimedia Commons 'File:Mars Viking MDIM21 ClrMosaic 1km.jpg' (public domain). Team to confirm."
+  },
+  {
+    "id": "nasa-blue-marble",
+    "title": "NASA Earth Observatory: Blue Marble Next Generation (Reto Stöckli; public domain)",
+    "org": "NASA",
+    "url": "https://neo.sci.gsfc.nasa.gov",
+    "usedFor": "The Earth in the Solar System view",
+    "checkedBy": "Via Wikimedia Commons 'File:Blue Marble Next Generation + topography + bathymetry.jpg' (public domain, relief added by NordNordWest). Team to confirm."
+  },
+  {
+    "id": "nasa-jupiter-pia07782",
+    "title": "NASA/JPL/Space Science Institute: Jupiter cylindrical map, Cassini, PIA07782 (public domain)",
+    "org": "NASA",
+    "url": "http://photojournal.jpl.nasa.gov/catalog/PIA07782",
+    "usedFor": "Jupiter in the Solar System view",
+    "checkedBy": "Via Wikimedia Commons (public domain). Team to confirm."
+  },
+  {
+    "id": "nasa-moonbase-systems",
+    "org": "NASA",
+    "title": "NASA: Moon base systems",
+    "url": "https://www.nasa.gov/moonbase-systems/",
+    "usedFor": "Mission 1 and 14 Why? (power on a Moon base)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-moon-water",
+    "org": "NASA",
+    "title": "NASA Science: Moon water and ices",
+    "url": "https://science.nasa.gov/moon/moon-water-and-ices/",
+    "usedFor": "Mission 3 Why? (water ice in shadowed craters)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-rover-testing",
+    "org": "NASA",
+    "title": "NASA: Testing advanced capabilities for Moon and Mars rovers",
+    "url": "https://www.nasa.gov/solar-system/moon/nasa-testing-advanced-capabilities-for-moon-mars-rovers/",
+    "usedFor": "Mission 6 Why? (rover wheels and navigation)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). The page says rough terrain; \"dusty\" is only implied."
+  },
+  {
+    "id": "nasa-south-pole-shadows",
+    "org": "NASA",
+    "title": "NASA Science: Shadows near the Moon's south pole",
+    "url": "https://science.nasa.gov/resource/shadows-near-the-moons-south-pole/",
+    "usedFor": "Mission 7 Why? (long shadows at the south pole)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-lunar-comms",
+    "org": "NASA",
+    "title": "NASA Glenn: Lunar surface propagation",
+    "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/scan/lunar-surface-propagation/",
+    "usedFor": "Mission 9 Why? (Earth low on the horizon at the south pole)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-apollo-seismic",
+    "org": "NASA",
+    "title": "NASA Science: Apollo 11 seismic experiment",
+    "url": "https://science.nasa.gov/resource/apollo-11-seismic-experiment/",
+    "usedFor": "Mission 10 Why? (not used this weekend)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-moonquakes",
+    "org": "NASA",
+    "title": "NASA Science: Moonquakes",
+    "url": "https://science.nasa.gov/moon/moonquakes/",
+    "usedFor": "Mission 11 Why? (not used this weekend)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-spacesuits",
+    "org": "NASA",
+    "title": "NASA: Spacesuits",
+    "url": "https://www.nasa.gov/humans-in-space/astronauts/spacesuits/",
+    "usedFor": "Mission 12 Why? (cooling garment and radio)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). \"Oxygen\" dropped per B10."
+  },
+  {
+    "id": "nasa-lunar-meteoroids",
+    "org": "NASA",
+    "title": "NASA Meteoroid Environment Office: Lunar meteoroid environment",
+    "url": "https://www.nasa.gov/meteoroid-environment-office/lunar-meteoroid-environment/",
+    "usedFor": "Mission 13 Why? (not used this weekend)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). Wording softened per B10."
+  },
+  {
+    "id": "nasa-fitness-risk",
+    "org": "NASA",
+    "title": "NASA: Risk of reduced cardiorespiratory and musculoskeletal fitness",
+    "url": "https://www.nasa.gov/reference/risk-of-reduced-cardiorespiratory-and-musculoskeletal-fitness/",
+    "usedFor": "Mission 15 Why? (exercise in space)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-spacewalking-tools",
+    "org": "NASA",
+    "title": "NASA: Spacewalking tools",
+    "url": "https://www.nasa.gov/suits-and-rovers/spacewalking-tools/",
+    "usedFor": "Mission 16 Why? (not used this weekend)",
+    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+  },
+  {
+    "id": "nasa-mariner9-50-years",
+    "org": "NASA",
+    "title": "NASA: 50 Years Ago: Mariner 9 Enters Mars Orbit",
+    "url": "",
+    "usedFor": "Why Olympus Mons (the summit above the 1971 dust storm). TODO_VERIFY: fact checker to add the URL",
+    "checkedBy": "TODO_VERIFY"
+  }
+]

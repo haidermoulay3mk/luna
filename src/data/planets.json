@@ -1,0 +1,94 @@
+[
+  {
+    "id": "mercury",
+    "name": "Mercury",
+    "orbitYears": 0.241,
+    "kind": "rocky",
+    "visited": "robots",
+    "facts": ["The closest planet to the Sun.", "Robotic spacecraft have flown past and orbited it. No people have been there."],
+    "whyNot": "Too close to the Sun: crews would face extreme heat and radiation.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "venus",
+    "name": "Venus",
+    "orbitYears": 0.615,
+    "kind": "rocky",
+    "visited": "robots",
+    "facts": ["Thick clouds trap heat, making its surface the hottest of any planet.", "Robotic landers have reached the surface, but did not last long."],
+    "whyNot": "Its surface heat and crushing air pressure would destroy a crewed lander.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "earth",
+    "name": "Earth",
+    "orbitYears": 1,
+    "kind": "rocky",
+    "visited": "home",
+    "facts": ["Our home. Every mission starts from here and is guided by Mission Control here."],
+    "whyNot": "",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "moon",
+    "name": "The Moon",
+    "orbitYears": 1,
+    "kind": "moon",
+    "visited": "humans",
+    "world": "moon",
+    "facts": ["People have walked here: twelve astronauts landed during the Apollo missions, from 1969 to 1972.", "NASA's Artemis program plans to send astronauts back."],
+    "whyNot": "",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "mars",
+    "name": "Mars",
+    "orbitYears": 1.881,
+    "kind": "rocky",
+    "visited": "robots",
+    "world": "mars",
+    "facts": ["Robots explore it today, like NASA's Curiosity and Perseverance rovers.", "No people have been there yet. NASA is preparing for future crewed missions."],
+    "whyNot": "",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "jupiter",
+    "name": "Jupiter",
+    "orbitYears": 11.86,
+    "kind": "gas",
+    "visited": "robots",
+    "facts": ["The biggest planet. It is a gas giant, so there is no solid ground to land on.", "Robotic spacecraft have studied it from orbit."],
+    "whyNot": "No surface to land on, and very strong radiation around it.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "saturn",
+    "name": "Saturn",
+    "orbitYears": 29.46,
+    "kind": "gas",
+    "visited": "robots",
+    "facts": ["Famous for its rings, made of ice and rock.", "A gas giant, studied up close by robotic spacecraft."],
+    "whyNot": "No surface to land on, and it is very far away.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "uranus",
+    "name": "Uranus",
+    "orbitYears": 84.0,
+    "kind": "ice",
+    "visited": "robots",
+    "facts": ["An ice giant that spins tipped over on its side.", "Only one spacecraft has flown past it."],
+    "whyNot": "Too far: a trip would take many years.",
+    "sourceId": "TODO_VERIFY"
+  },
+  {
+    "id": "neptune",
+    "name": "Neptune",
+    "orbitYears": 164.8,
+    "kind": "ice",
+    "visited": "robots",
+    "facts": ["The farthest planet from the Sun, with very strong winds.", "Only one spacecraft has flown past it."],
+    "whyNot": "Too far: a trip would take many years.",
+    "sourceId": "TODO_VERIFY"
+  }
+]

@@ -1,0 +1,934 @@
+[
+  {
+    "id": 1,
+    "chapter": 1,
+    "tier": 1,
+    "title": "First Light",
+    "day": 1,
+    "subtitle": "Arrival at the Moon base",
+    "challenge": "You must decide how to use the available electricity.",
+    "objective": "Keep Power above 40",
+    "bonusObjective": "Keep Power above 60",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "Your team has just arrived at the Moon base."
+      },
+      {
+        "speaker": "",
+        "line": "The solar panels are working, but the batteries don't have enough power for everything."
+      }
+    ],
+    "eventIds": [
+      "m1e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "power",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "power",
+        "min": 60
+      }
+    ],
+    "teaches": "Limited electricity",
+    "scienceCardId": "card-m1",
+    "world": "moon"
+  },
+  {
+    "id": 2,
+    "chapter": 1,
+    "tier": 1,
+    "title": "Breathing Room",
+    "day": 2,
+    "subtitle": "Life support",
+    "challenge": "The crew needs breathable air, but the base also needs electricity for other equipment.",
+    "objective": "Keep Life Support above 50",
+    "bonusObjective": "Keep Power above 50",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The crew notices that their air machines are using a lot of power."
+      }
+    ],
+    "eventIds": [
+      "m2e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "life",
+        "min": 50
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "power",
+        "min": 50
+      }
+    ],
+    "teaches": "Life support needs electricity",
+    "scienceCardId": "card-m2",
+    "world": "moon"
+  },
+  {
+    "id": 7,
+    "chapter": 1,
+    "tier": 1,
+    "title": "The Shadow Problem",
+    "day": 3,
+    "subtitle": "Sunlight on the Moon",
+    "challenge": "Find a way to collect more solar energy.",
+    "objective": "Keep Power above 40",
+    "bonusObjective": "Solar input above 60",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The base is near the Moon's south pole."
+      },
+      {
+        "speaker": "",
+        "line": "A nearby hill casts a long shadow over part of the solar panel area."
+      }
+    ],
+    "eventIds": [
+      "m7e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "power",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "solar",
+        "min": 60
+      }
+    ],
+    "teaches": "Sunlight on the Moon",
+    "scienceCardId": "card-m7",
+    "world": "moon"
+  },
+  {
+    "id": 3,
+    "chapter": 2,
+    "tier": 1,
+    "title": "The Water Search",
+    "day": 5,
+    "subtitle": "Finding water on the Moon",
+    "challenge": "Search for water ice without wasting resources.",
+    "objective": "Keep Life Support above 40",
+    "bonusObjective": "Water above 60",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The Moon base needs more water."
+      },
+      {
+        "speaker": "",
+        "line": "Scientists believe frozen water may exist inside some very cold craters near the Moon's poles."
+      }
+    ],
+    "eventIds": [
+      "m3e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "life",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "water",
+        "min": 60
+      }
+    ],
+    "teaches": "Finding water on the Moon",
+    "scienceCardId": "card-m3",
+    "world": "moon"
+  },
+  {
+    "id": 4,
+    "chapter": 2,
+    "tier": 1,
+    "title": "The Green Room",
+    "day": 7,
+    "subtitle": "Food production",
+    "challenge": "Grow food without wasting resources.",
+    "objective": "Keep Life Support above 40",
+    "bonusObjective": "Food above 80 and Power above 50",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The crew wants to grow food, but plants need water, light, and time."
+      }
+    ],
+    "eventIds": [
+      "m4e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "life",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "food",
+        "min": 80
+      },
+      {
+        "target": "power",
+        "min": 50
+      }
+    ],
+    "teaches": "Growing food requires resources",
+    "scienceCardId": "card-m4",
+    "world": "moon"
+  },
+  {
+    "id": 15,
+    "chapter": 2,
+    "tier": 1,
+    "title": "Crew Fitness",
+    "day": 9,
+    "subtitle": "Keeping astronauts healthy",
+    "challenge": "Balance exercise with research and other work.",
+    "objective": "Keep Crew above 50",
+    "bonusObjective": "Health above 70",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "After several days of work, the crew needs time for exercise and recovery."
+      }
+    ],
+    "eventIds": [
+      "m15e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "crew",
+        "min": 50
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "health",
+        "min": 70
+      }
+    ],
+    "teaches": "Keeping astronauts healthy",
+    "scienceCardId": "card-m15",
+    "world": "moon"
+  },
+  {
+    "id": 5,
+    "chapter": 3,
+    "tier": 1,
+    "title": "Dust on the Panels",
+    "day": 12,
+    "subtitle": "Energy crisis",
+    "challenge": "Restore electricity production.",
+    "objective": "Keep Power above 40",
+    "bonusObjective": "Restore Power above 50",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "Moon dust has collected on the solar panels, reducing the amount of electricity they produce."
+      }
+    ],
+    "eventIds": [
+      "m5e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "power",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "power",
+        "min": 50
+      }
+    ],
+    "teaches": "Dust reduces solar energy",
+    "scienceCardId": "card-m5",
+    "world": "moon"
+  },
+  {
+    "id": 6,
+    "chapter": 3,
+    "tier": 1,
+    "title": "Rover Trouble",
+    "day": 13,
+    "subtitle": "Travelling across the Moon",
+    "challenge": "Help the rover reach its destination safely.",
+    "objective": "Keep Power above 40",
+    "bonusObjective": "Keep 2 or more Supplies",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "A rover is exploring the Moon when it reaches an area with loose soil and large rocks."
+      }
+    ],
+    "eventIds": [
+      "m6e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "power",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "spareParts",
+        "min": 2
+      }
+    ],
+    "teaches": "Travelling across the Moon",
+    "scienceCardId": "card-m6",
+    "world": "moon"
+  },
+  {
+    "id": 12,
+    "chapter": 3,
+    "tier": 1,
+    "title": "Spacesuit Check",
+    "day": 14,
+    "subtitle": "Spacesuit safety",
+    "challenge": "Prepare the spacesuit for exploration.",
+    "objective": "Keep Crew above 40",
+    "bonusObjective": "Health above 60",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "An astronaut is preparing to explore outside the base."
+      },
+      {
+        "speaker": "",
+        "line": "A spacesuit inspection shows that some equipment needs attention."
+      }
+    ],
+    "eventIds": [
+      "m12e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "crew",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "health",
+        "min": 60
+      }
+    ],
+    "teaches": "Spacesuit safety",
+    "scienceCardId": "card-m12",
+    "world": "moon"
+  },
+  {
+    "id": 8,
+    "chapter": 4,
+    "tier": 1,
+    "title": "Radiation Shelter",
+    "day": 15,
+    "subtitle": "Solar storm warning",
+    "challenge": "Prepare a safe shelter before the storm arrives.",
+    "objective": "Keep Crew above 50",
+    "bonusObjective": "Radiation dose below 20",
+    "briefing": [
+      {
+        "speaker": "alert",
+        "line": "A solar storm is approaching the Moon. The astronauts must stay protected."
+      },
+      {
+        "speaker": "",
+        "line": "The crew will move into the shelter whatever you choose. You decide how to prepare it."
+      }
+    ],
+    "eventIds": [
+      "m8e1"
+    ],
+    "sols": 0,
+    "successIf": [
+      {
+        "gauge": "crew",
+        "min": 50
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "radiation",
+        "min": 80
+      }
+    ],
+    "teaches": "Protecting astronauts from solar storms",
+    "scienceCardId": "card-m8",
+    "world": "moon"
+  },
+  {
+    "id": 9,
+    "chapter": 4,
+    "tier": 1,
+    "title": "Lost Signal",
+    "day": 15,
+    "subtitle": "Communication with Earth",
+    "challenge": "Restore communication.",
+    "objective": "Keep Crew above 40",
+    "bonusObjective": "Morale above 60",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The Moon base is having trouble communicating with Earth."
+      },
+      {
+        "speaker": "",
+        "line": "The surrounding terrain is blocking part of the signal."
+      }
+    ],
+    "eventIds": [
+      "m9e1"
+    ],
+    "sols": 0,
+    "successIf": [
+      {
+        "gauge": "crew",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "morale",
+        "min": 60
+      }
+    ],
+    "teaches": "Communication with Earth",
+    "scienceCardId": "card-m9",
+    "world": "moon"
+  },
+  {
+    "id": 14,
+    "chapter": 4,
+    "tier": 1,
+    "title": "Blackout",
+    "day": 15,
+    "subtitle": "Final emergency",
+    "challenge": "Keep important systems working using the remaining electricity.",
+    "objective": "Keep Life Support above 30",
+    "bonusObjective": "Keep Crew above 50",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The solar storm has arrived. The Moon base's batteries are running low after earlier power problems."
+      }
+    ],
+    "eventIds": [
+      "m14e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "life",
+        "min": 30
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "crew",
+        "min": 50
+      }
+    ],
+    "teaches": "Making decisions during an emergency",
+    "scienceCardId": "card-m14",
+    "world": "moon"
+  },
+  {
+    "id": 101,
+    "chapter": 5,
+    "tier": 1,
+    "title": "First Light",
+    "day": 1,
+    "subtitle": "Arrival at ASTER-9",
+    "challenge": "Decide which systems to power first while keeping enough energy for later.",
+    "objective": "Keep Power above 40",
+    "bonusObjective": "Keep the battery above 60",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "After months of travelling through space, your crew has finally reached Mars."
+      },
+      {
+        "speaker": "",
+        "line": "But the mission has barely begun, and there's already a problem."
+      },
+      {
+        "speaker": "",
+        "line": "The base is running on limited battery power. Outside, the solar panels are beginning to collect sunlight, but they cannot power every system at once."
+      },
+      {
+        "speaker": "",
+        "line": "Your crew needs electricity for lighting, heating, and essential equipment."
+      }
+    ],
+    "eventIds": [
+      "mars1e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "power",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "battery",
+        "min": 60
+      }
+    ],
+    "teaches": "Limited electricity",
+    "scienceCardId": "card-mars1",
+    "world": "mars"
+  },
+  {
+    "id": 102,
+    "chapter": 5,
+    "tier": 1,
+    "title": "Breathing Room",
+    "day": 2,
+    "subtitle": "Life support",
+    "challenge": "Protect the crew's air supply without using too much electricity.",
+    "objective": "Keep Life Support above 50",
+    "bonusObjective": "Keep Power above 50",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The base is now operating, and the crew begins setting up their new home."
+      },
+      {
+        "speaker": "",
+        "line": "Suddenly, a warning appears on the main display."
+      },
+      {
+        "speaker": "",
+        "line": "On Mars, the outside air is mostly carbon dioxide and cannot be breathed by humans."
+      },
+      {
+        "speaker": "",
+        "line": "Inside the base, special machines must provide oxygen and remove the carbon dioxide that the crew breathes out."
+      },
+      {
+        "speaker": "",
+        "line": "These machines require electricity, and the base is still short on power."
+      }
+    ],
+    "eventIds": [
+      "mars2e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "life",
+        "min": 50
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "power",
+        "min": 50
+      }
+    ],
+    "teaches": "Life support needs electricity",
+    "scienceCardId": "card-mars2",
+    "world": "mars"
+  },
+  {
+    "id": 104,
+    "chapter": 5,
+    "tier": 1,
+    "title": "The Green Room",
+    "day": 7,
+    "subtitle": "Food production",
+    "challenge": "Balance the greenhouse's needs with the base's limited resources.",
+    "objective": "Keep Life Support above 40",
+    "bonusObjective": "Keep Power above 40",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "One week has passed since your arrival."
+      },
+      {
+        "speaker": "",
+        "line": "The base is stable, but food supplies will not last forever. The crew must begin growing fresh food."
+      },
+      {
+        "speaker": "",
+        "line": "Inside the greenhouse, rows of small plants sit beneath powerful LED lights."
+      },
+      {
+        "speaker": "",
+        "line": "The plants could provide fresh food in the future, but the greenhouse uses resources needed elsewhere."
+      },
+      {
+        "speaker": "",
+        "line": "Turning down the lights would save electricity, but it could also slow plant growth."
+      }
+    ],
+    "eventIds": [
+      "mars4e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "life",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "power",
+        "min": 40
+      }
+    ],
+    "teaches": "Growing food requires resources",
+    "scienceCardId": "card-mars4",
+    "world": "mars"
+  },
+  {
+    "id": 105,
+    "chapter": 6,
+    "tier": 1,
+    "title": "Dust on the Panels",
+    "day": 12,
+    "subtitle": "Energy crisis",
+    "challenge": "Find a way to restore energy before the next Martian night.",
+    "objective": "Keep Power above 40",
+    "bonusObjective": "Restore Power above 50",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "A strong wind has carried fine Martian dust across the landing site."
+      },
+      {
+        "speaker": "",
+        "line": "By morning, the base is receiving far less solar energy than expected."
+      },
+      {
+        "speaker": "",
+        "line": "The crew checks the outdoor cameras. Several solar panels are covered in a thick layer of red dust."
+      },
+      {
+        "speaker": "",
+        "line": "A maintenance robot could help clear the panels, but operating it would use some of the electricity you are trying to save."
+      },
+      {
+        "speaker": "",
+        "line": "Waiting might conserve power now, but the batteries could continue to lose charge."
+      }
+    ],
+    "eventIds": [
+      "mars5e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "power",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "power",
+        "min": 50
+      }
+    ],
+    "teaches": "Dust reduces solar energy",
+    "scienceCardId": "card-mars5",
+    "world": "mars"
+  },
+  {
+    "id": 108,
+    "chapter": 6,
+    "tier": 1,
+    "title": "Radiation Shelter",
+    "day": 15,
+    "subtitle": "Solar storm warning",
+    "challenge": "Prepare the shelter and protect the crew without exhausting the base's remaining resources.",
+    "objective": "Keep Crew above 50",
+    "bonusObjective": "Keep Power above 40",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The crew has been working hard to recover from the recent energy problems."
+      },
+      {
+        "speaker": "",
+        "line": "Then an urgent warning arrives from a spacecraft monitoring the Sun."
+      },
+      {
+        "speaker": "alert",
+        "line": "SOLAR STORM WARNING. High-energy particles are approaching Mars."
+      },
+      {
+        "speaker": "",
+        "line": "Unlike Earth, Mars does not have a global magnetic field to help shield the planet from these particles."
+      },
+      {
+        "speaker": "",
+        "line": "The crew can move into a specially protected shelter. However, preparing it will require electricity and supplies."
+      },
+      {
+        "speaker": "",
+        "line": "The storm is still some distance away."
+      }
+    ],
+    "eventIds": [
+      "mars8e1"
+    ],
+    "sols": 0,
+    "successIf": [
+      {
+        "gauge": "crew",
+        "min": 50
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "power",
+        "min": 40
+      }
+    ],
+    "teaches": "Protecting astronauts from solar storms",
+    "scienceCardId": "card-mars8",
+    "world": "mars"
+  },
+  {
+    "id": 114,
+    "chapter": 6,
+    "tier": 1,
+    "title": "Blackout",
+    "day": 15,
+    "subtitle": "Final emergency",
+    "challenge": "Make the final decision in 10 seconds and keep the crew's essential systems running.",
+    "objective": "Keep Life Support above 30",
+    "bonusObjective": "Keep Crew above 50",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The solar storm has reached Mars."
+      },
+      {
+        "speaker": "",
+        "line": "Inside ASTER-9, the crew waits in the radiation shelter."
+      },
+      {
+        "speaker": "",
+        "line": "Suddenly, the communication signal becomes unreliable. At the same time, the base's already weakened batteries reach a dangerously low level."
+      },
+      {
+        "speaker": "",
+        "line": "The main lights switch off, leaving only the emergency displays."
+      },
+      {
+        "speaker": "aster",
+        "line": "Commander, backup power is nearly empty. We must reduce energy use immediately."
+      },
+      {
+        "speaker": "",
+        "line": "The oxygen system, shelter equipment, and communication system all need electricity. There isn't enough power to run everything normally."
+      },
+      {
+        "speaker": "alert",
+        "line": "FINAL EMERGENCY DECISION. Every earlier decision has brought you to this moment."
+      }
+    ],
+    "eventIds": [
+      "mars14e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "life",
+        "min": 30
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "crew",
+        "min": 50
+      }
+    ],
+    "teaches": "Making decisions during an emergency",
+    "scienceCardId": "card-mars14",
+    "world": "mars"
+  },
+  {
+    "id": 10,
+    "chapter": 0,
+    "tier": 3,
+    "off": true,
+    "title": "The Cold Zone",
+    "day": 15,
+    "subtitle": "Extreme temperatures",
+    "challenge": "Protect the equipment from low temperatures.",
+    "objective": "Keep Power above 40",
+    "bonusObjective": "Morale above 60",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "A scientific instrument has been left outside in a very cold, shadowed area."
+      }
+    ],
+    "eventIds": [
+      "m10e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "power",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "morale",
+        "min": 60
+      }
+    ],
+    "teaches": "Extreme temperatures on the Moon",
+    "scienceCardId": "card-m10",
+    "world": "moon"
+  },
+  {
+    "id": 11,
+    "chapter": 0,
+    "tier": 3,
+    "off": true,
+    "title": "Moonquake Alert",
+    "day": 15,
+    "subtitle": "Moonquakes",
+    "challenge": "Make sure the base is safe.",
+    "objective": "Keep Crew above 40",
+    "bonusObjective": "Morale above 60",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "Sensors inside the base detect small vibrations coming from the ground."
+      }
+    ],
+    "eventIds": [
+      "m11e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "crew",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "morale",
+        "min": 60
+      }
+    ],
+    "teaches": "Moonquakes",
+    "scienceCardId": "card-m11",
+    "world": "moon"
+  },
+  {
+    "id": 13,
+    "chapter": 0,
+    "tier": 3,
+    "off": true,
+    "title": "Small Impacts",
+    "day": 15,
+    "subtitle": "Meteorite impacts",
+    "challenge": "Protect important equipment and check for damage.",
+    "objective": "Keep Power above 40",
+    "bonusObjective": "Keep 2 or more Supplies",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "Cameras detect a new impact mark near some equipment outside the Moon base."
+      }
+    ],
+    "eventIds": [
+      "m13e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "power",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "spareParts",
+        "min": 2
+      }
+    ],
+    "teaches": "Meteorite impacts",
+    "scienceCardId": "card-m13",
+    "world": "moon"
+  },
+  {
+    "id": 16,
+    "chapter": 0,
+    "tier": 3,
+    "off": true,
+    "title": "The Final Samples",
+    "day": 15,
+    "subtitle": "Collecting Moon rocks",
+    "challenge": "Collect useful samples without wasting time or supplies.",
+    "objective": "Keep Crew above 40",
+    "bonusObjective": "Morale above 70",
+    "briefing": [
+      {
+        "speaker": "",
+        "line": "The crew is preparing to finish its research mission."
+      },
+      {
+        "speaker": "",
+        "line": "There is limited time and space to collect rock samples."
+      }
+    ],
+    "eventIds": [
+      "m16e1"
+    ],
+    "sols": 1,
+    "successIf": [
+      {
+        "gauge": "crew",
+        "min": 40
+      }
+    ],
+    "bonusIf": [
+      {
+        "target": "morale",
+        "min": 70
+      }
+    ],
+    "teaches": "Collecting Moon rocks",
+    "scienceCardId": "card-m16",
+    "world": "moon"
+  }
+]

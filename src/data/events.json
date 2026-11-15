@@ -1,0 +1,2399 @@
+[
+  {
+    "id": "m1e1",
+    "missionId": 1,
+    "title": "First Light",
+    "speaker": "nova",
+    "line": "Commander, we have enough energy to start only a few systems. Which ones come first?",
+    "context": "The solar panels are working, but the batteries don't have enough power for everything.",
+    "urgent": false,
+    "focus": "battery",
+    "choices": [
+      {
+        "id": "m1e1a",
+        "label": "Save power for later",
+        "benefit": "Power +15 (saved for later)",
+        "cost": "Health −15 (the base gets cold)",
+        "effects": [
+          {
+            "target": "power",
+            "delta": 15
+          },
+          {
+            "target": "health",
+            "delta": -15
+          }
+        ],
+        "result": "The base stays dim and chilly, but the battery strips glow brighter.",
+        "sceneCue": {
+          "module": "battery",
+          "anim": "chargeUp"
+        }
+      },
+      {
+        "id": "m1e1b",
+        "label": "Use power for heating",
+        "benefit": "Health +10 (a warm base)",
+        "cost": "Power −15 (the batteries drain fast)",
+        "effects": [
+          {
+            "target": "health",
+            "delta": 10
+          },
+          {
+            "target": "power",
+            "delta": -15
+          }
+        ],
+        "result": "Warm light fills the habitat windows as the heaters hum on.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "windowsWarm"
+        }
+      },
+      {
+        "id": "m1e1c",
+        "label": "Use power for communication",
+        "benefit": "Morale +15 (a message to Earth)",
+        "cost": "Health −15 (the heaters stay off)",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 15
+          },
+          {
+            "target": "health",
+            "delta": -15
+          }
+        ],
+        "result": "The antenna light blinks as the crew's first message heads to Earth.",
+        "sceneCue": {
+          "module": "antenna",
+          "anim": "signalBlink"
+        }
+      }
+    ],
+    "why": {
+      "text": "NASA's Moon base plans use solar arrays, plus other power sources for the long lunar night.",
+      "sourceId": "nasa-moonbase-systems"
+    }
+  },
+  {
+    "id": "m1e2",
+    "missionId": 1,
+    "title": "Long Shadows",
+    "speaker": "rex",
+    "draft": true,
+    "line": "Commander, the Sun is sliding behind the ridge. Our panels will be in shadow soon.",
+    "context": "Near the south pole the Sun stays low, so shadows sweep across the panels. Plan your power before dark.",
+    "urgent": false,
+    "focus": "solar",
+    "choices": [
+      {
+        "id": "m1e2a",
+        "label": "Tilt panels toward the Sun",
+        "benefit": "Power +15 next sol",
+        "cost": "Takes 1 more sol",
+        "effects": [
+          {
+            "target": "power",
+            "delta": 15,
+            "delaySols": 1
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The panels swing slowly to catch the last light on the ridge.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "tilt"
+        }
+      },
+      {
+        "id": "m1e2b",
+        "label": "Charge the batteries now",
+        "benefit": "Battery +15 now",
+        "cost": "Morale −10 (dim habitat lights)",
+        "effects": [
+          {
+            "target": "battery",
+            "delta": 15
+          },
+          {
+            "target": "morale",
+            "delta": -10
+          }
+        ],
+        "result": "The battery strips glow full while the habitat lights dim.",
+        "sceneCue": {
+          "module": "battery",
+          "anim": "chargeUp"
+        }
+      },
+      {
+        "id": "m1e2c",
+        "label": "Switch off the lab",
+        "benefit": "Power +10",
+        "cost": "Food −10 (greenhouse lights off too)",
+        "effects": [
+          {
+            "target": "power",
+            "delta": 10
+          },
+          {
+            "target": "food",
+            "delta": -10
+          }
+        ],
+        "result": "The lab and the greenhouse go dark to save every watt.",
+        "sceneCue": {
+          "module": "greenhouse",
+          "anim": "lightsDim"
+        }
+      }
+    ],
+    "why": {
+      "text": "Near the Moon's south pole, the Sun stays low in the sky. Some ridges get sunlight most of the time, and some craters never see sunlight.",
+      "sourceId": "TODO_VERIFY"
+    }
+  },
+  {
+    "id": "m2e1",
+    "missionId": 2,
+    "title": "Breathing Room",
+    "speaker": "nova",
+    "line": "Commander, our life-support system is using more power than expected.",
+    "context": "The crew needs breathable air, but the base also needs electricity for other equipment.",
+    "urgent": false,
+    "focus": "oxygen",
+    "choices": [
+      {
+        "id": "m2e1a",
+        "label": "Run air machines on full",
+        "benefit": "Oxygen +15 (fresh air)",
+        "cost": "Power −15 (drains the battery fast)",
+        "effects": [
+          {
+            "target": "oxygen",
+            "delta": 15
+          },
+          {
+            "target": "power",
+            "delta": -15
+          }
+        ],
+        "result": "The air machines roar at full speed, and the battery strips dim.",
+        "sceneCue": {
+          "module": "oxygen",
+          "anim": "hum"
+        }
+      },
+      {
+        "id": "m2e1b",
+        "label": "Turn air machines down",
+        "benefit": "Power +10 (the machines use less)",
+        "cost": "Health −10 (less fresh oxygen)",
+        "effects": [
+          {
+            "target": "power",
+            "delta": 10
+          },
+          {
+            "target": "health",
+            "delta": -10
+          }
+        ],
+        "result": "The air machines slow to a quiet hum, and the air feels stuffy.",
+        "sceneCue": {
+          "module": "oxygen",
+          "anim": "slowDown"
+        }
+      },
+      {
+        "id": "m2e1c",
+        "label": "Shut off heaters & science lab",
+        "benefit": "Oxygen +10 (power goes to the air machines)",
+        "cost": "Health −15 (the base gets freezing cold)",
+        "effects": [
+          {
+            "target": "oxygen",
+            "delta": 10
+          },
+          {
+            "target": "health",
+            "delta": -15
+          }
+        ],
+        "result": "The heaters and lab screens click off, and the air machines keep running.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "lightsOff"
+        }
+      }
+    ],
+    "why": {
+      "text": "NASA uses life-support systems to provide oxygen, remove carbon dioxide, and maintain safe air inside spacecraft.",
+      "sourceId": "nasa-life-support"
+    }
+  },
+  {
+    "id": "m2e2",
+    "missionId": 2,
+    "title": "Filter Change",
+    "speaker": "nova",
+    "draft": true,
+    "line": "The carbon dioxide filter is clogging up. The air is getting stale.",
+    "context": "Life support must remove the carbon dioxide the crew breathes out. A clogged filter needs fixing.",
+    "urgent": false,
+    "focus": "oxygen",
+    "choices": [
+      {
+        "id": "m2e2a",
+        "label": "Replace the filter",
+        "benefit": "Oxygen +15",
+        "cost": "Supplies −1",
+        "effects": [
+          {
+            "target": "oxygen",
+            "delta": 15
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "A fresh filter clicks into place and the air clears.",
+        "sceneCue": {
+          "module": "oxygen",
+          "anim": "hum"
+        }
+      },
+      {
+        "id": "m2e2b",
+        "label": "Clean and reuse it",
+        "benefit": "Oxygen +10",
+        "cost": "Takes 1 more sol",
+        "effects": [
+          {
+            "target": "oxygen",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The crew scrubs the old filter carefully and slots it back in.",
+        "sceneCue": {
+          "module": "oxygen",
+          "anim": "hum"
+        }
+      },
+      {
+        "id": "m2e2c",
+        "label": "Run the backup scrubber",
+        "benefit": "Oxygen +10",
+        "cost": "Power −10",
+        "effects": [
+          {
+            "target": "oxygen",
+            "delta": 10
+          },
+          {
+            "target": "power",
+            "delta": -10
+          }
+        ],
+        "result": "A second machine hums to life beside the first.",
+        "sceneCue": {
+          "module": "oxygen",
+          "anim": "hum"
+        }
+      }
+    ],
+    "why": {
+      "text": "Life-support systems aboard the International Space Station provide oxygen, remove carbon dioxide, and recycle water.",
+      "sourceId": "nasa-life-support"
+    }
+  },
+  {
+    "id": "m4e1",
+    "missionId": 4,
+    "title": "The Green Room",
+    "speaker": "luna",
+    "line": "Our first crops are growing, but they need water, energy, and time.",
+    "context": "The crew wants to grow food, but plants need water, light, and time.",
+    "urgent": false,
+    "focus": "greenhouse",
+    "choices": [
+      {
+        "id": "m4e1a",
+        "label": "Grow more plants",
+        "benefit": "Food +20 next sol (more food later)",
+        "cost": "Water −15, Power −15",
+        "risk": "Water and electricity may run low.",
+        "effects": [
+          {
+            "target": "food",
+            "delta": 20,
+            "delaySols": 1
+          },
+          {
+            "target": "water",
+            "delta": -15
+          },
+          {
+            "target": "power",
+            "delta": -15
+          }
+        ],
+        "result": "Tiny seedlings fill every tray under the bright grow lights.",
+        "sceneCue": {
+          "module": "greenhouse",
+          "anim": "grow"
+        }
+      },
+      {
+        "id": "m4e1b",
+        "label": "Grow fewer plants",
+        "benefit": "Food +10 next sol, and it saves resources",
+        "cost": "Water −5, Power −5",
+        "risk": "Less food is produced.",
+        "effects": [
+          {
+            "target": "food",
+            "delta": 10,
+            "delaySols": 1
+          },
+          {
+            "target": "water",
+            "delta": -5
+          },
+          {
+            "target": "power",
+            "delta": -5
+          }
+        ],
+        "result": "A few neat rows of plants grow, using less water and power.",
+        "sceneCue": {
+          "module": "greenhouse",
+          "anim": "growSmall"
+        }
+      },
+      {
+        "id": "m4e1c",
+        "label": "Reduce the lighting time",
+        "benefit": "Power +10 (saved)",
+        "cost": "Takes 1 more sol",
+        "risk": "Plants may grow more slowly.",
+        "effects": [
+          {
+            "target": "power",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The greenhouse lights dim, and the little plants grow more slowly.",
+        "sceneCue": {
+          "module": "greenhouse",
+          "anim": "lightsDim"
+        }
+      }
+    ],
+    "why": {
+      "text": "NASA has grown vegetables aboard the International Space Station using LED lights, water, and nutrients.",
+      "sourceId": "nasa-plants-in-space"
+    }
+  },
+  {
+    "id": "m4e2",
+    "missionId": 4,
+    "title": "Thirsty Plants",
+    "speaker": "luna",
+    "draft": true,
+    "line": "The water recycler is running slow, and the plants are thirsty.",
+    "context": "On a base, water is recycled again and again. It is used for drinking, making oxygen and growing plants.",
+    "urgent": false,
+    "focus": "recycler",
+    "choices": [
+      {
+        "id": "m4e2a",
+        "label": "Repair the recycler",
+        "benefit": "Water +15",
+        "cost": "Supplies −1",
+        "effects": [
+          {
+            "target": "water",
+            "delta": 15
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "The recycler gurgles back to full speed.",
+        "sceneCue": {
+          "module": "recycler",
+          "anim": "flow"
+        }
+      },
+      {
+        "id": "m4e2b",
+        "label": "Ration drinking water",
+        "benefit": "Water +10",
+        "cost": "Health −10 (a thirsty crew)",
+        "effects": [
+          {
+            "target": "water",
+            "delta": 10
+          },
+          {
+            "target": "health",
+            "delta": -10
+          }
+        ],
+        "result": "Everyone gets a smaller cup today.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "quiet"
+        }
+      },
+      {
+        "id": "m4e2c",
+        "label": "Water the plants less",
+        "benefit": "Water +10",
+        "cost": "Food −10 next sol",
+        "effects": [
+          {
+            "target": "water",
+            "delta": 10
+          },
+          {
+            "target": "food",
+            "delta": -10,
+            "delaySols": 1
+          }
+        ],
+        "result": "The leaves droop a little as the sprinklers slow down.",
+        "sceneCue": {
+          "module": "greenhouse",
+          "anim": "lightsDim"
+        }
+      }
+    ],
+    "why": {
+      "text": "Water on a base is recycled. It is used for drinking, for oxygen-making systems and for plants.",
+      "sourceId": "TODO_VERIFY"
+    }
+  },
+  {
+    "id": "m5e1",
+    "missionId": 5,
+    "title": "Dust on the Panels",
+    "speaker": "rex",
+    "line": "Commander, the dust is blocking sunlight. Our batteries aren't charging fast enough.",
+    "context": "Moon dust has collected on the solar panels, reducing the amount of electricity they produce.",
+    "urgent": false,
+    "focus": "solar",
+    "choices": [
+      {
+        "id": "m5e1a",
+        "label": "Use a cleaning robot",
+        "benefit": "Power +15 next sol (cleaner panels)",
+        "cost": "Power −10 now",
+        "risk": "The robot uses valuable electricity.",
+        "effects": [
+          {
+            "target": "power",
+            "delta": -10
+          },
+          {
+            "target": "power",
+            "delta": 15,
+            "delaySols": 1
+          }
+        ],
+        "result": "BOLT rolls out and sweeps the grey dust off the panels.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "robotClean"
+        }
+      },
+      {
+        "id": "m5e1b",
+        "label": "Send an astronaut to clean",
+        "benefit": "Power +25 next sol (clean panels)",
+        "cost": "Takes 2 more sols, Supplies −1",
+        "risk": "The astronaut needs extra equipment and protection.",
+        "effects": [
+          {
+            "target": "power",
+            "delta": 25,
+            "delaySols": 1
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "An astronaut suits up and carefully brushes every panel clean.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "crewClean"
+        }
+      },
+      {
+        "id": "m5e1c",
+        "label": "Wait and save electricity",
+        "benefit": "Power +10 now (saved)",
+        "cost": "Takes 1 more sol",
+        "risk": "The dusty panels continue producing less power.",
+        "effects": [
+          {
+            "target": "power",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The panels stay grey with dust while the base saves every watt.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "dustStays"
+        }
+      }
+    ],
+    "why": {
+      "text": "NASA tested a dust shield on the Moon that pushed dust off glass and radiator surfaces. Solar panels could use it next.",
+      "sourceId": "nasa-lunar-dust"
+    }
+  },
+  {
+    "id": "m5e2",
+    "missionId": 5,
+    "title": "Dusty Airlock",
+    "speaker": "rex",
+    "draft": true,
+    "line": "Commander, we tracked Moon dust inside. It sticks to everything.",
+    "context": "Moon dust clings to suits and tools. Inside the base, it gets into machines and the air.",
+    "urgent": false,
+    "focus": "habitat",
+    "choices": [
+      {
+        "id": "m5e2a",
+        "label": "Clean suits before entering",
+        "benefit": "Health +10",
+        "cost": "Takes 1 more sol",
+        "effects": [
+          {
+            "target": "health",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The crew brushes every suit down in the airlock.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "quiet"
+        }
+      },
+      {
+        "id": "m5e2b",
+        "label": "Vacuum the airlock",
+        "benefit": "Health +10",
+        "cost": "Power −10",
+        "effects": [
+          {
+            "target": "health",
+            "delta": 10
+          },
+          {
+            "target": "power",
+            "delta": -10
+          }
+        ],
+        "result": "A loud vacuum sucks the grey dust out of the airlock.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "quiet"
+        }
+      },
+      {
+        "id": "m5e2c",
+        "label": "Skip the cleaning today",
+        "benefit": "Morale +5 (more free time)",
+        "cost": "Health −10 (dusty air)",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 5
+          },
+          {
+            "target": "health",
+            "delta": -10
+          }
+        ],
+        "result": "A thin grey film settles on the habitat floor.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "quiet"
+        }
+      }
+    ],
+    "why": {
+      "text": "Lunar dust can stick to equipment and reduce the performance of solar panels.",
+      "sourceId": "nasa-lunar-dust"
+    }
+  },
+  {
+    "id": "m8e1",
+    "missionId": 8,
+    "title": "Radiation Shelter",
+    "speaker": "nova",
+    "line": "Commander, high-energy particles from the Sun may reach our base. The crew needs extra protection.",
+    "context": "A solar storm is approaching the Moon. The crew moves into the shelter whatever you choose. You decide how to prepare it.",
+    "urgent": false,
+    "spaceWeatherLinked": true,
+    "focus": "shelter",
+    "choices": [
+      {
+        "id": "m8e1a",
+        "label": "Add water shielding",
+        "benefit": "Radiation dose −20 (shelter + water walls)",
+        "cost": "Takes 2 more sols, Supplies −1",
+        "risk": "Other preparations are delayed.",
+        "effects": [
+          {
+            "target": "radiation",
+            "delta": -20
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "Water containers line the shelter walls like a thick blanket.",
+        "sceneCue": {
+          "module": "shelter",
+          "anim": "waterWall"
+        }
+      },
+      {
+        "id": "m8e1b",
+        "label": "Move extra supplies inside",
+        "benefit": "Radiation dose −10 now, −10 next sol (the crew can stay inside longer)",
+        "cost": "Supplies −2, takes 1 more sol",
+        "risk": "Fewer supplies are available elsewhere.",
+        "effects": [
+          {
+            "target": "radiation",
+            "delta": -10
+          },
+          {
+            "target": "radiation",
+            "delta": -10,
+            "delaySols": 1
+          },
+          {
+            "target": "spareParts",
+            "delta": -2
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "Boxes of food and supplies are stacked safely inside the shelter.",
+        "sceneCue": {
+          "module": "shelter",
+          "anim": "stackSupplies"
+        }
+      },
+      {
+        "id": "m8e1c",
+        "label": "Shut down research equipment",
+        "benefit": "Power +15 for the shelter, Radiation dose −10",
+        "cost": "Takes 1 more sol, Morale −5",
+        "risk": "Research activities stop.",
+        "effects": [
+          {
+            "target": "power",
+            "delta": 15
+          },
+          {
+            "target": "radiation",
+            "delta": -10
+          },
+          {
+            "target": "time",
+            "delta": 1
+          },
+          {
+            "target": "morale",
+            "delta": -5
+          }
+        ],
+        "result": "The research lab goes dark, and the shelter lights glow brighter.",
+        "sceneCue": {
+          "module": "shelter",
+          "anim": "doorGlow"
+        }
+      }
+    ],
+    "why": {
+      "text": "Solar storms can send high-energy particles toward the Moon. NASA studies protective shelters and materials such as water and stored supplies to help shield astronauts.",
+      "sourceId": "nasa-solar-storms-moon"
+    }
+  },
+  {
+    "id": "m8e2",
+    "missionId": 8,
+    "title": "Spacewalk Abort",
+    "speaker": "nova",
+    "draft": true,
+    "line": "Two crew members are still outside fixing a panel. The storm is close.",
+    "context": "Spacewalks are planned around safety. When danger comes, crews stop and come back inside.",
+    "urgent": false,
+    "spaceWeatherLinked": true,
+    "focus": "shelter",
+    "choices": [
+      {
+        "id": "m8e2a",
+        "label": "Bring them in now",
+        "benefit": "Radiation dose −10",
+        "cost": "Solar −10 (the panel stays broken)",
+        "effects": [
+          {
+            "target": "radiation",
+            "delta": -10
+          },
+          {
+            "target": "solar",
+            "delta": -10
+          }
+        ],
+        "result": "The airlock door shuts behind the two returning astronauts.",
+        "sceneCue": {
+          "module": "shelter",
+          "anim": "doorGlow"
+        }
+      },
+      {
+        "id": "m8e2b",
+        "label": "Finish the repair fast",
+        "benefit": "Solar +15",
+        "cost": "Radiation dose +15",
+        "effects": [
+          {
+            "target": "solar",
+            "delta": 15
+          },
+          {
+            "target": "radiation",
+            "delta": 15
+          }
+        ],
+        "result": "The panel lights up just as the crew rushes back inside.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "robotClean"
+        }
+      },
+      {
+        "id": "m8e2c",
+        "label": "Send BOLT to finish",
+        "benefit": "Solar +10",
+        "cost": "BOLT −15 (wear and tear)",
+        "effects": [
+          {
+            "target": "solar",
+            "delta": 10
+          },
+          {
+            "target": "bolt",
+            "delta": -15
+          }
+        ],
+        "result": "BOLT rolls out alone and tightens the last bolts.",
+        "sceneCue": {
+          "module": "bolt",
+          "anim": "roll"
+        }
+      }
+    ],
+    "why": {
+      "text": "The Moon has no global magnetic field and no thick atmosphere, so solar particles reach the surface. Shelter and mass, like soil or water, help block radiation.",
+      "sourceId": "TODO_VERIFY"
+    }
+  },
+  {
+    "id": "m14e1",
+    "missionId": 14,
+    "title": "Final Emergency Decision",
+    "speaker": "nova",
+    "line": "Commander, we need your decision. The crew is counting on you.",
+    "context": "The solar storm has arrived. The Moon base's batteries are running low after earlier power problems.",
+    "urgent": true,
+    "defaultChoiceId": "m14e1a",
+    "spaceWeatherLinked": true,
+    "focus": "habitat",
+    "choices": [
+      {
+        "id": "m14e1a",
+        "label": "Turn off extra gadgets",
+        "benefit": "Life Support +15 (the saved power goes to it)",
+        "cost": "Morale −10 (research activities stop)",
+        "risk": "Some equipment cannot be used.",
+        "effects": [
+          {
+            "target": "life",
+            "delta": 15
+          },
+          {
+            "target": "morale",
+            "delta": -10
+          }
+        ],
+        "result": "Screens and gadgets click off, and the air machines keep humming.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "gadgetsOff"
+        }
+      },
+      {
+        "id": "m14e1b",
+        "label": "Use backup batteries",
+        "benefit": "Life Support +15 (important systems keep running)",
+        "cost": "Battery −15 (3 Backup Power)",
+        "risk": "Emergency energy reserves become low.",
+        "effects": [
+          {
+            "target": "life",
+            "delta": 15
+          },
+          {
+            "target": "battery",
+            "delta": -15
+          }
+        ],
+        "result": "The backup batteries click on, and the emergency lights steady.",
+        "sceneCue": {
+          "module": "battery",
+          "anim": "backupOn"
+        }
+      },
+      {
+        "id": "m14e1c",
+        "label": "Send an emergency message",
+        "benefit": "Morale +15 (tries to alert Earth)",
+        "cost": "Power −10",
+        "risk": "Less electricity remains for the base.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 15
+          },
+          {
+            "target": "power",
+            "delta": -10
+          }
+        ],
+        "result": "The antenna flickers as an emergency message races toward Earth.",
+        "sceneCue": {
+          "module": "antenna",
+          "anim": "sos"
+        }
+      }
+    ],
+    "why": {
+      "text": "Solar storms can affect spacecraft electronics and communications. Backup power systems help keep important equipment running. In this game, the blackout happens mainly because the base has already used most of its stored electricity.",
+      "sourceId": "nasa-solar-storm-effects"
+    }
+  },
+  {
+    "id": "m14e2",
+    "missionId": 14,
+    "title": "Radio Silence",
+    "speaker": "nova",
+    "draft": true,
+    "line": "The storm has cut our link to Earth. We have to decide on our own.",
+    "context": "Earth is usually only seconds away by radio, but storms and the horizon can block the signal.",
+    "urgent": false,
+    "spaceWeatherLinked": true,
+    "focus": "antenna",
+    "choices": [
+      {
+        "id": "m14e2a",
+        "label": "Follow the emergency checklist",
+        "benefit": "Life Support +10",
+        "cost": "Takes 1 more sol",
+        "effects": [
+          {
+            "target": "life",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The crew works through the checklist, one step at a time.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "quiet"
+        }
+      },
+      {
+        "id": "m14e2b",
+        "label": "Keep calling Earth",
+        "benefit": "Morale +10",
+        "cost": "Power −10",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "power",
+            "delta": -10
+          }
+        ],
+        "result": "The antenna light keeps blinking into the static.",
+        "sceneCue": {
+          "module": "antenna",
+          "anim": "sos"
+        }
+      },
+      {
+        "id": "m14e2c",
+        "label": "Rest and wait it out",
+        "benefit": "Health +10",
+        "cost": "Morale −10 (a worried crew)",
+        "effects": [
+          {
+            "target": "health",
+            "delta": 10
+          },
+          {
+            "target": "morale",
+            "delta": -10
+          }
+        ],
+        "result": "The crew sleeps in shifts while the storm passes overhead.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "quiet"
+        }
+      }
+    ],
+    "why": {
+      "text": "Radio signals take about 1.3 seconds to travel between Earth and the Moon.",
+      "sourceId": "TODO_VERIFY"
+    }
+  },
+  {
+    "id": "mars1e1",
+    "missionId": 101,
+    "title": "First Light",
+    "speaker": "aster",
+    "line": "Commander, we have enough energy to start only a few systems. Which ones come first?",
+    "context": "The batteries don't have enough power for everything. The crew needs electricity for lighting, heating, and essential equipment.",
+    "urgent": false,
+    "focus": "battery",
+    "choices": [
+      {
+        "id": "mars1e1a",
+        "label": "Save power for later",
+        "benefit": "Battery +15",
+        "cost": "Morale −10 (a cold, dim base)",
+        "effects": [
+          {
+            "target": "battery",
+            "delta": 15
+          },
+          {
+            "target": "morale",
+            "delta": -10
+          }
+        ],
+        "result": "The base stays dim and chilly, but the battery strips glow brighter.",
+        "sceneCue": {
+          "module": "battery",
+          "anim": "chargeUp"
+        }
+      },
+      {
+        "id": "mars1e1b",
+        "label": "Use power for heating",
+        "benefit": "Crew +10 (warm and cosy)",
+        "cost": "Battery −15",
+        "effects": [
+          {
+            "target": "crew",
+            "delta": 10
+          },
+          {
+            "target": "battery",
+            "delta": -15
+          }
+        ],
+        "result": "Warm light fills the habitat windows as the heaters hum on.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "windowsWarm"
+        }
+      },
+      {
+        "id": "mars1e1c",
+        "label": "Use power for communication",
+        "benefit": "Morale +15 (a message home)",
+        "cost": "Battery −15",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 15
+          },
+          {
+            "target": "battery",
+            "delta": -15
+          }
+        ],
+        "result": "The antenna light blinks as the crew's first message heads home.",
+        "sceneCue": {
+          "module": "antenna",
+          "anim": "signalBlink"
+        }
+      }
+    ],
+    "why": {
+      "text": "Solar-powered spacecraft on Mars collect sunlight to generate electricity. Batteries store energy for times when sunlight is unavailable.",
+      "sourceId": "nasa-insight-mission"
+    }
+  },
+  {
+    "id": "mars2e1",
+    "missionId": 102,
+    "title": "Breathing Room",
+    "speaker": "aster",
+    "line": "Commander, our life-support system is using more power than expected.",
+    "context": "Machines make oxygen and remove carbon dioxide. They need electricity, and the base is still short on power.",
+    "urgent": false,
+    "focus": "oxygen",
+    "choices": [
+      {
+        "id": "mars2e1a",
+        "label": "Keep life support running normally",
+        "benefit": "Oxygen +15",
+        "cost": "Battery −15",
+        "effects": [
+          {
+            "target": "oxygen",
+            "delta": 15
+          },
+          {
+            "target": "battery",
+            "delta": -15
+          }
+        ],
+        "result": "The oxygen generator keeps humming and the air stays fresh.",
+        "sceneCue": {
+          "module": "oxygen",
+          "anim": "hum"
+        }
+      },
+      {
+        "id": "mars2e1b",
+        "label": "Turn off unnecessary equipment",
+        "benefit": "Battery +10",
+        "cost": "Morale −5 (fewer comforts)",
+        "effects": [
+          {
+            "target": "battery",
+            "delta": 10
+          },
+          {
+            "target": "morale",
+            "delta": -5
+          }
+        ],
+        "result": "Spare lights and screens click off all around the base.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "lightsOff"
+        }
+      },
+      {
+        "id": "mars2e1c",
+        "label": "Delay nonessential research",
+        "benefit": "Battery +15",
+        "cost": "Morale −15 (no science today)",
+        "effects": [
+          {
+            "target": "battery",
+            "delta": 15
+          },
+          {
+            "target": "morale",
+            "delta": -15
+          }
+        ],
+        "result": "The science desks go quiet, and the batteries start to fill.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "quiet"
+        }
+      }
+    ],
+    "why": {
+      "text": "Life-support systems aboard the International Space Station provide oxygen, remove carbon dioxide, and recycle water.",
+      "sourceId": "nasa-life-support"
+    }
+  },
+  {
+    "id": "mars4e1",
+    "missionId": 104,
+    "title": "The Green Room",
+    "speaker": "zara",
+    "line": "Our first crops are growing, but they need water, energy, and time.",
+    "context": "Plants need water, light, and time to grow. The greenhouse uses resources needed elsewhere.",
+    "urgent": false,
+    "focus": "greenhouse",
+    "choices": [
+      {
+        "id": "mars4e1a",
+        "label": "Grow more plants",
+        "benefit": "Food +20 next sol",
+        "cost": "Water −10, Battery −10",
+        "effects": [
+          {
+            "target": "food",
+            "delta": 20,
+            "delaySols": 1
+          },
+          {
+            "target": "water",
+            "delta": -10
+          },
+          {
+            "target": "battery",
+            "delta": -10
+          }
+        ],
+        "result": "Tiny seedlings fill every tray under the bright grow lights.",
+        "sceneCue": {
+          "module": "greenhouse",
+          "anim": "grow"
+        }
+      },
+      {
+        "id": "mars4e1b",
+        "label": "Grow fewer plants",
+        "benefit": "Food +10 next sol",
+        "cost": "Battery −5",
+        "effects": [
+          {
+            "target": "food",
+            "delta": 10,
+            "delaySols": 1
+          },
+          {
+            "target": "battery",
+            "delta": -5
+          }
+        ],
+        "result": "A few neat rows of plants grow, using less water and power.",
+        "sceneCue": {
+          "module": "greenhouse",
+          "anim": "growSmall"
+        }
+      },
+      {
+        "id": "mars4e1c",
+        "label": "Reduce the lighting time",
+        "benefit": "Battery +10",
+        "cost": "Food −10 (slower growth)",
+        "effects": [
+          {
+            "target": "battery",
+            "delta": 10
+          },
+          {
+            "target": "food",
+            "delta": -10
+          }
+        ],
+        "result": "The greenhouse lights dim, and the little plants grow more slowly.",
+        "sceneCue": {
+          "module": "greenhouse",
+          "anim": "lightsDim"
+        }
+      }
+    ],
+    "why": {
+      "text": "Astronauts have successfully grown lettuce and other plants aboard the International Space Station using special lighting, water, and nutrients.",
+      "sourceId": "nasa-plants-in-space"
+    }
+  },
+  {
+    "id": "mars5e1",
+    "missionId": 105,
+    "title": "Dust on the Panels",
+    "speaker": "alex",
+    "line": "Commander, the dust is blocking sunlight. Our batteries aren't charging fast enough.",
+    "context": "Red dust is blocking sunlight on the solar panels. Cleaning them takes time and resources.",
+    "urgent": false,
+    "focus": "solar",
+    "choices": [
+      {
+        "id": "mars5e1a",
+        "label": "Use the cleaning robot",
+        "benefit": "Power +20 next sol",
+        "cost": "Battery −10 now, BOLT −10",
+        "effects": [
+          {
+            "target": "battery",
+            "delta": -10
+          },
+          {
+            "target": "bolt",
+            "delta": -10
+          },
+          {
+            "target": "power",
+            "delta": 20,
+            "delaySols": 1
+          }
+        ],
+        "result": "The cleaning robot rolls out and sweeps red dust off the panels.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "robotClean"
+        }
+      },
+      {
+        "id": "mars5e1b",
+        "label": "Send a trained crew member",
+        "benefit": "Power +15 next sol",
+        "cost": "Health −10 (a tiring trip outside)",
+        "effects": [
+          {
+            "target": "health",
+            "delta": -10
+          },
+          {
+            "target": "power",
+            "delta": 15,
+            "delaySols": 1
+          }
+        ],
+        "result": "A crew member suits up and carefully brushes the panels clean.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "crewClean"
+        }
+      },
+      {
+        "id": "mars5e1c",
+        "label": "Save power for now",
+        "benefit": "Battery +10 now",
+        "cost": "Power −15 next sol (still dusty)",
+        "effects": [
+          {
+            "target": "battery",
+            "delta": 10
+          },
+          {
+            "target": "power",
+            "delta": -15,
+            "delaySols": 1
+          }
+        ],
+        "result": "The panels stay red with dust while the base saves every watt.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "dustStays"
+        }
+      }
+    ],
+    "why": {
+      "text": "NASA's InSight lander experienced major power losses as dust accumulated on its solar panels. Its daily energy production dropped from about 5,000 to 500 watt-hours by 2022.",
+      "sourceId": "nasa-insight-solar-power"
+    }
+  },
+  {
+    "id": "mars8e1",
+    "missionId": 108,
+    "title": "Radiation Shelter",
+    "speaker": "aster",
+    "line": "Commander, high-energy particles from the Sun may reach our base. The crew needs extra protection.",
+    "context": "Mars has no global magnetic field. The shelter protects the crew, but preparing it takes electricity and supplies.",
+    "urgent": false,
+    "spaceWeatherLinked": true,
+    "focus": "shelter",
+    "choices": [
+      {
+        "id": "mars8e1a",
+        "label": "Move into the shelter",
+        "benefit": "Radiation dose −15",
+        "cost": "Battery −10",
+        "effects": [
+          {
+            "target": "radiation",
+            "delta": -15
+          },
+          {
+            "target": "battery",
+            "delta": -10
+          }
+        ],
+        "result": "The crew moves into the shelter, and its door light glows.",
+        "sceneCue": {
+          "module": "shelter",
+          "anim": "doorGlow"
+        }
+      },
+      {
+        "id": "mars8e1b",
+        "label": "Shield with water containers",
+        "benefit": "Radiation dose −20",
+        "cost": "Water −10, Morale −5",
+        "effects": [
+          {
+            "target": "radiation",
+            "delta": -20
+          },
+          {
+            "target": "water",
+            "delta": -10
+          },
+          {
+            "target": "morale",
+            "delta": -5
+          }
+        ],
+        "result": "Water containers line the shelter walls like a thick blanket.",
+        "sceneCue": {
+          "module": "shelter",
+          "anim": "waterWall"
+        }
+      },
+      {
+        "id": "mars8e1c",
+        "label": "Move supplies to the shelter",
+        "benefit": "Spare parts +1 (kept safe)",
+        "cost": "Radiation dose +10",
+        "effects": [
+          {
+            "target": "spareParts",
+            "delta": 1
+          },
+          {
+            "target": "radiation",
+            "delta": 10
+          }
+        ],
+        "result": "Boxes of food and spare parts are stacked safely in the shelter.",
+        "sceneCue": {
+          "module": "shelter",
+          "anim": "stackSupplies"
+        }
+      }
+    ],
+    "why": {
+      "text": "On May 20, 2024, NASA's Curiosity rover recorded its largest radiation surge since landing on Mars in 2012. This provides real evidence of the danger solar storms could pose to future astronauts.",
+      "sourceId": "nasa-mars-solar-storm-2024"
+    }
+  },
+  {
+    "id": "mars14e1",
+    "missionId": 114,
+    "title": "Final Emergency Decision",
+    "speaker": "aster",
+    "line": "Commander, we need your decision. The crew is counting on you.",
+    "context": "The storm has arrived. Oxygen, shelter equipment, and communications all need power, and there isn't enough for everything.",
+    "urgent": true,
+    "defaultChoiceId": "mars14e1a",
+    "spaceWeatherLinked": true,
+    "focus": "habitat",
+    "choices": [
+      {
+        "id": "mars14e1a",
+        "label": "Give priority to life support",
+        "benefit": "Life Support +15",
+        "cost": "Battery −15",
+        "effects": [
+          {
+            "target": "life",
+            "delta": 15
+          },
+          {
+            "target": "battery",
+            "delta": -15
+          }
+        ],
+        "result": "Every spare watt flows to the air and water machines.",
+        "sceneCue": {
+          "module": "oxygen",
+          "anim": "priorityLife"
+        }
+      },
+      {
+        "id": "mars14e1b",
+        "label": "Switch to backup batteries",
+        "benefit": "Battery +20",
+        "cost": "Uses 1 spare part, Oxygen −10",
+        "effects": [
+          {
+            "target": "battery",
+            "delta": 20
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          },
+          {
+            "target": "oxygen",
+            "delta": -10
+          }
+        ],
+        "result": "The backup batteries click on and the emergency lights steady.",
+        "sceneCue": {
+          "module": "battery",
+          "anim": "backupOn"
+        }
+      },
+      {
+        "id": "mars14e1c",
+        "label": "Send an emergency message",
+        "benefit": "Morale +15 (Earth hears you)",
+        "cost": "Battery −15",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 15
+          },
+          {
+            "target": "battery",
+            "delta": -15
+          }
+        ],
+        "result": "The antenna flickers as an emergency message races toward Earth.",
+        "sceneCue": {
+          "module": "antenna",
+          "anim": "sos"
+        }
+      }
+    ],
+    "why": {
+      "text": "Space radiation is a major challenge for future human Mars missions. Solar storms can also interfere with spacecraft electronics and communications. The power shortage in this story is caused by the base's earlier energy problems.",
+      "sourceId": "nasa-space-radiation"
+    }
+  },
+  {
+    "id": "m3e1",
+    "missionId": 3,
+    "title": "The Water Search",
+    "speaker": "luna",
+    "line": "Searching for ice takes time, electricity, and equipment.",
+    "context": "The Moon base needs more water. Scientists believe frozen water may exist inside some very cold craters near the Moon's poles.",
+    "urgent": false,
+    "focus": "recycler",
+    "choices": [
+      {
+        "id": "m3e1a",
+        "label": "Send a rover to search",
+        "benefit": "Water +20 (the rover maps possible ice)",
+        "cost": "Power −15, takes 2 more sols",
+        "risk": "The rover may not find usable ice.",
+        "effects": [
+          {
+            "target": "water",
+            "delta": 20
+          },
+          {
+            "target": "power",
+            "delta": -15
+          },
+          {
+            "target": "time",
+            "delta": 2
+          }
+        ],
+        "result": "The rover rolls out and maps possible ice locations.",
+        "sceneCue": {
+          "module": "rover",
+          "anim": "driveOut"
+        }
+      },
+      {
+        "id": "m3e1b",
+        "label": "Search a nearby crater",
+        "benefit": "Water +15 (a possible water source)",
+        "cost": "Takes 2 more sols, Supplies −1",
+        "risk": "The crater may contain little or no ice.",
+        "effects": [
+          {
+            "target": "water",
+            "delta": 15
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "The crew investigates a possible water source in the crater.",
+        "sceneCue": {
+          "module": "recycler",
+          "anim": "fill"
+        }
+      },
+      {
+        "id": "m3e1c",
+        "label": "Save the stored water",
+        "benefit": "Water +5 (less water used)",
+        "cost": "Crew −5",
+        "risk": "Some activities must be limited.",
+        "effects": [
+          {
+            "target": "water",
+            "delta": 5
+          },
+          {
+            "target": "crew",
+            "delta": -5
+          }
+        ],
+        "result": "The crew cuts water use while they wait for more information.",
+        "sceneCue": {
+          "module": "recycler",
+          "anim": "save"
+        }
+      }
+    ],
+    "why": {
+      "text": "NASA has confirmed water ice in permanently shadowed regions of the Moon. Scientists are studying whether this ice could support future astronauts.",
+      "sourceId": "nasa-moon-water"
+    }
+  },
+  {
+    "id": "m6e1",
+    "missionId": 6,
+    "title": "Rover Trouble",
+    "speaker": "rex",
+    "line": "The rover may become stuck or damaged if it continues along the same route.",
+    "context": "A rover is exploring the Moon when it reaches an area with loose soil and large rocks.",
+    "urgent": false,
+    "focus": "rover",
+    "choices": [
+      {
+        "id": "m6e1a",
+        "label": "Keep driving forward",
+        "benefit": "Morale +15 (the rover tries to cross)",
+        "cost": "Power −10",
+        "risk": "Its wheels may lose traction or become stuck.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 15
+          },
+          {
+            "target": "power",
+            "delta": -10
+          }
+        ],
+        "result": "The rover attempts to cross the difficult area.",
+        "sceneCue": {
+          "module": "rover",
+          "anim": "pushOn"
+        }
+      },
+      {
+        "id": "m6e1b",
+        "label": "Find another route",
+        "benefit": "Morale +10 (the rover avoids the rough ground)",
+        "cost": "Takes 2 more sols, Power −5",
+        "risk": "The journey takes longer.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "power",
+            "delta": -5
+          }
+        ],
+        "result": "The rover turns away and avoids the difficult terrain.",
+        "sceneCue": {
+          "module": "rover",
+          "anim": "detour"
+        }
+      },
+      {
+        "id": "m6e1c",
+        "label": "Send another rover",
+        "benefit": "Morale +15 (a second rover helps)",
+        "cost": "Power −15, Supplies −1",
+        "risk": "More equipment and electricity are used.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 15
+          },
+          {
+            "target": "power",
+            "delta": -15
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "A second rover rolls out to help with the mission.",
+        "sceneCue": {
+          "module": "rover",
+          "anim": "second"
+        }
+      }
+    ],
+    "why": {
+      "text": "NASA develops and tests lunar rover wheels and navigation systems to help vehicles travel across rough, dusty terrain.",
+      "sourceId": "nasa-rover-testing"
+    }
+  },
+  {
+    "id": "m7e1",
+    "missionId": 7,
+    "title": "The Shadow Problem",
+    "speaker": "rex",
+    "line": "The panels cannot collect enough sunlight while they remain in shadow.",
+    "context": "The base is near the Moon's south pole. A nearby hill casts a long shadow over part of the solar panel area.",
+    "urgent": false,
+    "focus": "solar",
+    "choices": [
+      {
+        "id": "m7e1a",
+        "label": "Move panels into sunlight",
+        "benefit": "Solar input +20 (more sunlight reaches the panels)",
+        "cost": "Takes 2 more sols, Supplies −1",
+        "risk": "Moving equipment takes time and resources.",
+        "effects": [
+          {
+            "target": "solar",
+            "delta": 20
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "The crew carries the panels out of the shadow.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "move"
+        }
+      },
+      {
+        "id": "m7e1b",
+        "label": "Raise the solar panels",
+        "benefit": "Solar input +15 (above some nearby obstacles)",
+        "cost": "Supplies −2, Power −5",
+        "risk": "The raised structure needs extra support.",
+        "effects": [
+          {
+            "target": "solar",
+            "delta": 15
+          },
+          {
+            "target": "spareParts",
+            "delta": -2
+          },
+          {
+            "target": "power",
+            "delta": -5
+          }
+        ],
+        "result": "The panels rise on tall posts above the shadow.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "raise"
+        }
+      },
+      {
+        "id": "m7e1c",
+        "label": "Keep panels where they are",
+        "benefit": "Saves time and supplies now",
+        "cost": "Power −10 next sol",
+        "risk": "The panels continue collecting less energy.",
+        "effects": [
+          {
+            "target": "power",
+            "delta": -10,
+            "delaySols": 1
+          }
+        ],
+        "result": "The panels stay put, half in shadow.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "stay"
+        }
+      }
+    ],
+    "why": {
+      "text": "Near the Moon's south pole, the Sun stays close to the horizon. Hills and craters can create very long shadows that affect solar power.",
+      "sourceId": "nasa-south-pole-shadows"
+    }
+  },
+  {
+    "id": "m9e1",
+    "missionId": 9,
+    "title": "Lost Signal",
+    "speaker": "rex",
+    "line": "Important information needs to reach Earth, but the connection is unreliable.",
+    "context": "The Moon base is having trouble communicating with Earth. The surrounding terrain is blocking part of the signal.",
+    "urgent": false,
+    "focus": "antenna",
+    "choices": [
+      {
+        "id": "m9e1a",
+        "label": "Adjust the antenna",
+        "benefit": "Morale +15 (a clearer line to Earth)",
+        "cost": "Power −5, takes 2 more sols",
+        "risk": "The signal may still be blocked.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 15
+          },
+          {
+            "target": "power",
+            "delta": -5
+          },
+          {
+            "target": "time",
+            "delta": 2
+          }
+        ],
+        "result": "The antenna turns slowly toward a clear direction.",
+        "sceneCue": {
+          "module": "antenna",
+          "anim": "turn"
+        }
+      },
+      {
+        "id": "m9e1b",
+        "label": "Save messages for later",
+        "benefit": "Morale +5 (important data is stored)",
+        "cost": "Takes 2 more sols",
+        "risk": "Earth receives the information late.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 5
+          },
+          {
+            "target": "time",
+            "delta": 2
+          }
+        ],
+        "result": "Important data is stored until communication improves.",
+        "sceneCue": {
+          "module": "antenna",
+          "anim": "store"
+        }
+      },
+      {
+        "id": "m9e1c",
+        "label": "Use more transmission power",
+        "benefit": "Morale +10 (may improve a weak signal)",
+        "cost": "Power −15",
+        "risk": "Extra power cannot solve every signal blockage.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "power",
+            "delta": -15
+          }
+        ],
+        "result": "The antenna light glows brighter as it transmits harder.",
+        "sceneCue": {
+          "module": "antenna",
+          "anim": "boost"
+        }
+      }
+    ],
+    "why": {
+      "text": "Near the lunar south pole, Earth can appear very low on the horizon or become hidden by the terrain. This makes direct communication difficult.",
+      "sourceId": "nasa-lunar-comms"
+    }
+  },
+  {
+    "id": "m12e1",
+    "missionId": 12,
+    "title": "Spacesuit Check",
+    "speaker": "nova",
+    "line": "The spacesuit must be checked before the astronaut can leave safely.",
+    "context": "An astronaut is preparing to explore outside the base. A spacesuit inspection shows that some equipment needs attention.",
+    "urgent": false,
+    "focus": "habitat",
+    "choices": [
+      {
+        "id": "m12e1a",
+        "label": "Replace worn equipment",
+        "benefit": "Health +15 (the damaged part is repaired)",
+        "cost": "Supplies −2, takes 1 more sol",
+        "risk": "Fewer spare parts remain.",
+        "effects": [
+          {
+            "target": "health",
+            "delta": 15
+          },
+          {
+            "target": "spareParts",
+            "delta": -2
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The crew swaps the worn part for a new one.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "repair"
+        }
+      },
+      {
+        "id": "m12e1b",
+        "label": "Refill suit supplies",
+        "benefit": "Health +10 (the suit's supplies are restored)",
+        "cost": "Supplies −2",
+        "risk": "The original equipment problem still needs checking.",
+        "effects": [
+          {
+            "target": "health",
+            "delta": 10
+          },
+          {
+            "target": "spareParts",
+            "delta": -2
+          }
+        ],
+        "result": "The suit's supplies are topped up.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "refill"
+        }
+      },
+      {
+        "id": "m12e1c",
+        "label": "Delay the exploration",
+        "benefit": "Health +10 (more time to inspect the suit)",
+        "cost": "Takes 2 more sols",
+        "risk": "The mission takes longer.",
+        "effects": [
+          {
+            "target": "health",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 2
+          }
+        ],
+        "result": "The suit stays on its rack for a careful check.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "inspect"
+        }
+      }
+    ],
+    "why": {
+      "text": "Spacesuits contain equipment for temperature control and communication. Astronauts need these systems when exploring outside a spacecraft.",
+      "sourceId": "nasa-spacesuits"
+    }
+  },
+  {
+    "id": "m15e1",
+    "missionId": 15,
+    "title": "Crew Fitness",
+    "speaker": "nova",
+    "line": "The astronauts must stay physically fit while also completing their missions.",
+    "context": "After several days of work, the crew needs time for exercise and recovery.",
+    "urgent": false,
+    "focus": "habitat",
+    "choices": [
+      {
+        "id": "m15e1a",
+        "label": "Complete an exercise session",
+        "benefit": "Health +20 (protects the crew's fitness)",
+        "cost": "Takes 2 more sols, Power −5",
+        "risk": "Less time remains for research.",
+        "effects": [
+          {
+            "target": "health",
+            "delta": 20
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "power",
+            "delta": -5
+          }
+        ],
+        "result": "The crew trains hard in the habitat gym.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "exercise"
+        }
+      },
+      {
+        "id": "m15e1b",
+        "label": "Take shorter exercise sessions",
+        "benefit": "Health +10 (some exercise, more time left)",
+        "cost": "Takes 1 more sol, Power −5",
+        "risk": "It may not be enough if repeated too often.",
+        "effects": [
+          {
+            "target": "health",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 1
+          },
+          {
+            "target": "power",
+            "delta": -5
+          }
+        ],
+        "result": "The crew fits in a short workout between tasks.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "short"
+        }
+      },
+      {
+        "id": "m15e1c",
+        "label": "Delay exercise",
+        "benefit": "Morale +10 (more time for research today)",
+        "cost": "Crew −5",
+        "risk": "Missing exercise regularly may affect fitness.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "crew",
+            "delta": -5
+          }
+        ],
+        "result": "The crew skips the gym and heads to the lab.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "skip"
+        }
+      }
+    ],
+    "why": {
+      "text": "Astronauts exercise regularly in space to help protect their muscles and bones. The Moon has about one-sixth of Earth's gravity, and scientists are studying how reduced gravity affects astronaut health.",
+      "sourceId": "nasa-fitness-risk"
+    }
+  },
+  {
+    "id": "m10e1",
+    "missionId": 10,
+    "title": "The Cold Zone",
+    "speaker": "rex",
+    "line": "Extreme cold can damage equipment and reduce its performance.",
+    "context": "A scientific instrument has been left outside in a very cold, shadowed area.",
+    "urgent": false,
+    "focus": "battery",
+    "choices": [
+      {
+        "id": "m10e1a",
+        "label": "Use an equipment heater",
+        "benefit": "Morale +10 (the instrument stays warm)",
+        "cost": "Power −15",
+        "risk": "Batteries drain faster.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "power",
+            "delta": -15
+          }
+        ],
+        "result": "A small heater glows beside the instrument.",
+        "sceneCue": {
+          "module": "battery",
+          "anim": "heat"
+        }
+      },
+      {
+        "id": "m10e1b",
+        "label": "Move equipment indoors",
+        "benefit": "Morale +10 (the instrument is protected)",
+        "cost": "Takes 2 more sols, Supplies −1",
+        "risk": "Outdoor research is interrupted.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "The crew carries the instrument inside the base.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "carry"
+        }
+      },
+      {
+        "id": "m10e1c",
+        "label": "Switch off the instrument",
+        "benefit": "Power +10 (less energy used)",
+        "cost": "Takes 1 more sol",
+        "risk": "It may still become too cold without protection.",
+        "effects": [
+          {
+            "target": "power",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The instrument goes dark and quiet.",
+        "sceneCue": {
+          "module": "battery",
+          "anim": "off"
+        }
+      }
+    ],
+    "why": {
+      "text": "Temperatures on the Moon can become extremely low during darkness. NASA has used special heaters to protect scientific instruments on the lunar surface.",
+      "sourceId": "nasa-apollo-seismic"
+    }
+  },
+  {
+    "id": "m11e1",
+    "missionId": 11,
+    "title": "Moonquake Alert",
+    "speaker": "nova",
+    "line": "The crew needs to check whether the vibrations have affected the base.",
+    "context": "Sensors inside the base detect small vibrations coming from the ground.",
+    "urgent": false,
+    "focus": "habitat",
+    "choices": [
+      {
+        "id": "m11e1a",
+        "label": "Check the base sensors",
+        "benefit": "Morale +10 (checks for damage)",
+        "cost": "Power −5, takes 1 more sol",
+        "risk": "Other work is delayed.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "power",
+            "delta": -5
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The sensor screens light up one by one.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "scan"
+        }
+      },
+      {
+        "id": "m11e1b",
+        "label": "Stop research and inspect",
+        "benefit": "Morale +10 (more time to check the base)",
+        "cost": "Takes 2 more sols",
+        "risk": "Research activities are delayed.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 2
+          }
+        ],
+        "result": "The crew walks the base, checking every wall.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "inspect"
+        }
+      },
+      {
+        "id": "m11e1c",
+        "label": "Continue normal activities",
+        "benefit": "Morale +10 (research continues)",
+        "cost": "Crew −5",
+        "risk": "Possible damage may go unnoticed.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "crew",
+            "delta": -5
+          }
+        ],
+        "result": "Work carries on as the ground settles.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "carryOn"
+        }
+      }
+    ],
+    "why": {
+      "text": "Apollo astronauts placed instruments on the Moon that detected moonquakes. Some moonquakes are caused by the Moon shrinking as it cools.",
+      "sourceId": "nasa-moonquakes"
+    }
+  },
+  {
+    "id": "m13e1",
+    "missionId": 13,
+    "title": "Small Impacts",
+    "speaker": "rex",
+    "line": "Small space rocks can strike the Moon because it has almost no atmosphere to stop them.",
+    "context": "Cameras detect a new impact mark near some equipment outside the Moon base.",
+    "urgent": false,
+    "focus": "solar",
+    "choices": [
+      {
+        "id": "m13e1a",
+        "label": "Inspect using cameras",
+        "benefit": "Morale +5 (checks for visible damage)",
+        "cost": "Power −5, takes 1 more sol",
+        "risk": "Cameras may not show hidden damage.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 5
+          },
+          {
+            "target": "power",
+            "delta": -5
+          },
+          {
+            "target": "time",
+            "delta": 1
+          }
+        ],
+        "result": "The cameras zoom in on the new mark.",
+        "sceneCue": {
+          "module": "antenna",
+          "anim": "look"
+        }
+      },
+      {
+        "id": "m13e1b",
+        "label": "Add protective shielding",
+        "benefit": "Solar input +15 (exposed equipment is protected)",
+        "cost": "Supplies −3, takes 2 more sols",
+        "risk": "Uses valuable materials.",
+        "effects": [
+          {
+            "target": "solar",
+            "delta": 15
+          },
+          {
+            "target": "spareParts",
+            "delta": -3
+          },
+          {
+            "target": "time",
+            "delta": 2
+          }
+        ],
+        "result": "Shield plates go up around the panels.",
+        "sceneCue": {
+          "module": "solar",
+          "anim": "shield"
+        }
+      },
+      {
+        "id": "m13e1c",
+        "label": "Move equipment indoors",
+        "benefit": "Battery reserve +10 (movable equipment is safe)",
+        "cost": "Takes 2 more sols, Supplies −1",
+        "risk": "Outdoor experiments must stop.",
+        "effects": [
+          {
+            "target": "battery",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "The crew carries the loose equipment inside.",
+        "sceneCue": {
+          "module": "habitat",
+          "anim": "carry"
+        }
+      }
+    ],
+    "why": {
+      "text": "Meteoroids can strike the lunar surface and create impact craters. Moon habitats and suits must be built to withstand this.",
+      "sourceId": "nasa-lunar-meteoroids"
+    }
+  },
+  {
+    "id": "m16e1",
+    "missionId": 16,
+    "title": "The Final Samples",
+    "speaker": "luna",
+    "line": "The astronauts must decide which samples to collect and bring back for scientific study.",
+    "context": "The crew is preparing to finish its research mission. There is limited time and space to collect rock samples.",
+    "urgent": false,
+    "focus": "rover",
+    "choices": [
+      {
+        "id": "m16e1a",
+        "label": "Collect different rocks",
+        "benefit": "Morale +15 (a wider variety of samples)",
+        "cost": "Takes 2 more sols, Supplies −2",
+        "risk": "Less time remains for other research.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 15
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "spareParts",
+            "delta": -2
+          }
+        ],
+        "result": "Sample bags fill with rocks of every colour.",
+        "sceneCue": {
+          "module": "rover",
+          "anim": "collect"
+        }
+      },
+      {
+        "id": "m16e1b",
+        "label": "Collect nearby rocks",
+        "benefit": "Morale +10 (samples collected quickly)",
+        "cost": "Takes 1 more sol, Supplies −1",
+        "risk": "Important samples farther away may be missed.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 1
+          },
+          {
+            "target": "spareParts",
+            "delta": -1
+          }
+        ],
+        "result": "The crew fills a few bags close to the base.",
+        "sceneCue": {
+          "module": "rover",
+          "anim": "nearby"
+        }
+      },
+      {
+        "id": "m16e1c",
+        "label": "Study rocks before collecting",
+        "benefit": "Morale +10 (records about each rock)",
+        "cost": "Takes 2 more sols, Power −5",
+        "risk": "Fewer samples may be collected.",
+        "effects": [
+          {
+            "target": "morale",
+            "delta": 10
+          },
+          {
+            "target": "time",
+            "delta": 2
+          },
+          {
+            "target": "power",
+            "delta": -5
+          }
+        ],
+        "result": "The crew photographs and measures each rock first.",
+        "sceneCue": {
+          "module": "rover",
+          "anim": "study"
+        }
+      }
+    ],
+    "why": {
+      "text": "Apollo astronauts collected more than 800 pounds of Moon rocks and soil. Scientists study these samples to learn about the Moon's history and formation.",
+      "sourceId": "nasa-spacewalking-tools"
+    }
+  }
+]

@@ -1,0 +1,302 @@
+{
+  "fetchedAt": "2026-11-14T18:51:58.743Z",
+  "source": "NASA NeoWs (Near Earth Object Web Service), via api.nasa.gov",
+  "startDate": "2026-11-08",
+  "endDate": "2026-11-14",
+  "asteroids": [
+    {
+      "name": "138175 (2000 EE104)",
+      "diameterM": 343,
+      "speedKmS": 7.28,
+      "hazardous": true,
+      "approachDate": "2026-11-08"
+    },
+    {
+      "name": "2012 KT12",
+      "diameterM": 19,
+      "speedKmS": 7.31,
+      "hazardous": false,
+      "approachDate": "2026-11-08"
+    },
+    {
+      "name": "2016 JN5",
+      "diameterM": 75,
+      "speedKmS": 22,
+      "hazardous": false,
+      "approachDate": "2026-11-08"
+    },
+    {
+      "name": "2016 LC11",
+      "diameterM": 534,
+      "speedKmS": 28.78,
+      "hazardous": false,
+      "approachDate": "2026-11-08"
+    },
+    {
+      "name": "462238 (2008 CN1)",
+      "diameterM": 317,
+      "speedKmS": 11.04,
+      "hazardous": true,
+      "approachDate": "2026-11-08"
+    },
+    {
+      "name": "1998 VE31",
+      "diameterM": 273,
+      "speedKmS": 12.13,
+      "hazardous": false,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2008 BT2",
+      "diameterM": 53,
+      "speedKmS": 3.97,
+      "hazardous": false,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2015 FV284",
+      "diameterM": 284,
+      "speedKmS": 15.58,
+      "hazardous": true,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2015 TH238",
+      "diameterM": 180,
+      "speedKmS": 14.33,
+      "hazardous": false,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2016 AB9",
+      "diameterM": 49,
+      "speedKmS": 7.74,
+      "hazardous": false,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2017 BR6",
+      "diameterM": 11,
+      "speedKmS": 10.61,
+      "hazardous": false,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2017 FG1",
+      "diameterM": 31,
+      "speedKmS": 13.08,
+      "hazardous": false,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2018 VE5",
+      "diameterM": 82,
+      "speedKmS": 11.13,
+      "hazardous": false,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2018 VH2",
+      "diameterM": 326,
+      "speedKmS": 34.47,
+      "hazardous": false,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2019 VK5",
+      "diameterM": 124,
+      "speedKmS": 3.86,
+      "hazardous": false,
+      "approachDate": "2026-11-09"
+    },
+    {
+      "name": "2000 AH205",
+      "diameterM": 130,
+      "speedKmS": 10.33,
+      "hazardous": false,
+      "approachDate": "2026-11-10"
+    },
+    {
+      "name": "2012 YD7",
+      "diameterM": 59,
+      "speedKmS": 7.46,
+      "hazardous": false,
+      "approachDate": "2026-11-10"
+    },
+    {
+      "name": "2015 VH65",
+      "diameterM": 12,
+      "speedKmS": 7.98,
+      "hazardous": false,
+      "approachDate": "2026-11-10"
+    },
+    {
+      "name": "2019 UF5",
+      "diameterM": 33,
+      "speedKmS": 6.94,
+      "hazardous": false,
+      "approachDate": "2026-11-10"
+    },
+    {
+      "name": "499998 (2011 PT)",
+      "diameterM": 68,
+      "speedKmS": 13.15,
+      "hazardous": false,
+      "approachDate": "2026-11-10"
+    },
+    {
+      "name": "138852 (2000 WN10)",
+      "diameterM": 376,
+      "speedKmS": 16.46,
+      "hazardous": false,
+      "approachDate": "2026-11-11"
+    },
+    {
+      "name": "2013 VO5",
+      "diameterM": 230,
+      "speedKmS": 27.47,
+      "hazardous": true,
+      "approachDate": "2026-11-11"
+    },
+    {
+      "name": "2015 TJ1",
+      "diameterM": 126,
+      "speedKmS": 17.46,
+      "hazardous": false,
+      "approachDate": "2026-11-11"
+    },
+    {
+      "name": "2018 LW5",
+      "diameterM": 317,
+      "speedKmS": 13.92,
+      "hazardous": false,
+      "approachDate": "2026-11-11"
+    },
+    {
+      "name": "2019 UD13",
+      "diameterM": 86,
+      "speedKmS": 25.38,
+      "hazardous": false,
+      "approachDate": "2026-11-11"
+    },
+    {
+      "name": "2014 XQ3",
+      "diameterM": 522,
+      "speedKmS": 15.67,
+      "hazardous": false,
+      "approachDate": "2026-11-12"
+    },
+    {
+      "name": "2017 VK1",
+      "diameterM": 326,
+      "speedKmS": 15.39,
+      "hazardous": false,
+      "approachDate": "2026-11-12"
+    },
+    {
+      "name": "2017 WY",
+      "diameterM": 113,
+      "speedKmS": 9.54,
+      "hazardous": false,
+      "approachDate": "2026-11-12"
+    },
+    {
+      "name": "2019 CO5",
+      "diameterM": 239,
+      "speedKmS": 16.05,
+      "hazardous": false,
+      "approachDate": "2026-11-12"
+    },
+    {
+      "name": "2007 WA",
+      "diameterM": 49,
+      "speedKmS": 12.25,
+      "hazardous": false,
+      "approachDate": "2026-11-13"
+    },
+    {
+      "name": "2007 WX4",
+      "diameterM": 378,
+      "speedKmS": 14.28,
+      "hazardous": false,
+      "approachDate": "2026-11-13"
+    },
+    {
+      "name": "2011 UB131",
+      "diameterM": 224,
+      "speedKmS": 18.28,
+      "hazardous": false,
+      "approachDate": "2026-11-13"
+    },
+    {
+      "name": "2016 ED156",
+      "diameterM": 83,
+      "speedKmS": 19.35,
+      "hazardous": false,
+      "approachDate": "2026-11-13"
+    },
+    {
+      "name": "2016 TR55",
+      "diameterM": 109,
+      "speedKmS": 6.08,
+      "hazardous": false,
+      "approachDate": "2026-11-13"
+    },
+    {
+      "name": "2018 LQ2",
+      "diameterM": 43,
+      "speedKmS": 1.79,
+      "hazardous": false,
+      "approachDate": "2026-11-13"
+    },
+    {
+      "name": "2019 VL5",
+      "diameterM": 29,
+      "speedKmS": 9.94,
+      "hazardous": false,
+      "approachDate": "2026-11-13"
+    },
+    {
+      "name": "363790 (2005 JE46)",
+      "diameterM": 1158,
+      "speedKmS": 14.73,
+      "hazardous": true,
+      "approachDate": "2026-11-13"
+    },
+    {
+      "name": "2017 BK123",
+      "diameterM": 358,
+      "speedKmS": 38.18,
+      "hazardous": false,
+      "approachDate": "2026-11-14"
+    },
+    {
+      "name": "2018 HU",
+      "diameterM": 31,
+      "speedKmS": 19.2,
+      "hazardous": false,
+      "approachDate": "2026-11-14"
+    },
+    {
+      "name": "2019 OV3",
+      "diameterM": 60,
+      "speedKmS": 8.25,
+      "hazardous": false,
+      "approachDate": "2026-11-14"
+    },
+    {
+      "name": "218017 (2001 XV266)",
+      "diameterM": 467,
+      "speedKmS": 7.27,
+      "hazardous": false,
+      "approachDate": "2026-11-14"
+    },
+    {
+      "name": "274138 (2008 FU6)",
+      "diameterM": 1201,
+      "speedKmS": 17.38,
+      "hazardous": false,
+      "approachDate": "2026-11-14"
+    }
+  ]
+}
