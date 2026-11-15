@@ -2,7 +2,7 @@
 
 (The game was called OUTPOST until 14 November 2026.)
 
-Team Sol One · NASA Space Apps 2026 · Sakhir, Bahrain
+Team GWIN · NASA Space Apps 2026 · Bahrain
 
 ## Use of AI
 

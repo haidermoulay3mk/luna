@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "version": "0.1.0",
-  "description": "Luna: Junior Astronaut Mission Trainer. A 3D Moon-and-Mars exploration and decision game for players aged 10 to 14 (walk your astronaut, fly the rocket, climb Olympus Mons, play solo or in an online crew) (NASA Space Apps 2026, Team Sol One, Sakhir). The game concept, story and missions are by the team; the code was written with help from Claude (Anthropic), an AI assistant.",
+  "description": "Luna: Junior Astronaut Mission Trainer. A 3D Moon-and-Mars exploration and decision game for players aged 7 to 12 (walk your astronaut, fly the rocket, climb Olympus Mons, play solo or in an online crew) (NASA Space Apps 2026, Team GWIN, Bahrain). The game concept, story and missions are by the team; the code was written with help from Claude (Anthropic), an AI assistant.",
   "type": "module",
   "scripts": {
     "dev": "node node_modules/vite/bin/vite.js",

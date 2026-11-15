@@ -5,7 +5,7 @@
 // How it works: PeerJS (free, open source, no account) connects the browsers directly with WebRTC.
 // PeerJS's free public server only introduces the devices to each other; game data then goes device
 // to device. There is no Luna server and no account. Only the name each player types is shared.
-// No chat (players are 10 to 14). Needs internet; the USB file still works offline for solo play.
+// No chat (players are 7 to 12). Needs internet; the USB file still works offline for solo play.
 //
 // The host's game is the real one: guests see the host's mission (screen, cards, gauges) and vote
 // on every decision; any crew member can walk to the mission site and start it. Every astronaut

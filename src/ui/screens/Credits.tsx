@@ -41,7 +41,7 @@ export function Credits() {
 
         <section className="hud mt-4 p-4">
           <h2 className="font-display text-xl font-bold">Made by</h2>
-          <p className="mt-1">Team Sol One · NASA Space Apps Challenge 2026 · Sakhir, Bahrain.</p>
+          <p className="mt-1">Team GWIN · NASA Space Apps Challenge 2026 · Bahrain.</p>
           <p className="mt-2 text-ink">
             The game idea, story, missions and rules are by our team. The code was written with help from{' '}
             <b>Claude (Anthropic)</b>, an AI assistant. No AI-generated images, video or audio are used: the 3D scenes are drawn in

@@ -3,11 +3,11 @@
 **Play online:** https://luna-swart-phi.vercel.app
 
 
-**NASA Space Apps Challenge 2026 · Team Sol One · Sakhir, Bahrain**
+**NASA Space Apps Challenge 2026 · Team GWIN · Bahrain**
 
 > Get your crew from Earth to the summit of Olympus Mons and switch on Olympus Station.
 
-Luna is a 3D exploration and decision game for players aged 10 to 14. You walk your own astronaut around a
+Luna is a 3D exploration and decision game for players aged 7 to 12. You walk your own astronaut around a
 Moon base, fly the rocket through real near-Earth asteroids, make the calls that keep the crew alive, and
 finally climb Olympus Mons on Mars to plant the mission flag. Play solo, or with friends online in a crew.
 
@@ -78,12 +78,12 @@ synthesised with the Web Audio API.
 
 ## Credits and use of AI
 
-The game concept, story, missions and design are by Team Sol One. The code was written with help from
+The game concept, story, missions and design are by Team GWIN. The code was written with help from
 **Claude (Anthropic)**, an AI assistant; main source files carry the note `Built with help from Claude (Anthropic).`
 No AI-generated images, video or audio are used, and nothing in the game shows a real person.
 Full credits and licences: [CREDITS.md](CREDITS.md). The original build spec is in [SPEC.md](SPEC.md).
 
 ## Licence
 
-The code is released under the [MIT Licence](LICENSE) (Team Sol One, 2026). NASA imagery used in the game is in the
+The code is released under the [MIT Licence](LICENSE) (Team GWIN, 2026). NASA imagery used in the game is in the
 public domain; fonts and libraries keep their own licences (see [CREDITS.md](CREDITS.md)).
