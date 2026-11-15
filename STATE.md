@@ -1,6 +1,6 @@
 ﻿# STATE: Luna (formerly OUTPOST)
 
-Last updated: 2026-11-15 (Sun) 09:20. Read "## Session 3c" first (lag, camera, F2 demo jump, scrollbars), then "## Session 3b".
+Last updated: 2026-11-15 (Sun) 20:40. Read "## Session 3d" first (online party join fix), then "## Session 3c" (lag, camera, F2 demo jump, scrollbars), then "## Session 3b".
 
 ## Claude Code: start here
 The repo now lives in the "Luna Hackathon" folder (git, branch `main`; tag `handoff-start` = the state the handoff arrived in;

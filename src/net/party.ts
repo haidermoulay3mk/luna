@@ -24,6 +24,25 @@ const PREFIX = 'luna-solone-party-';
 const POS_MS = 100;
 /** Game updates are bundled for this long (ms) so a burst of changes is sent once. */
 const SNAP_MS = 120;
+/** Reaching the PeerJS server gives up after this long (ms), instead of spinning forever. */
+const PEER_TIMEOUT_MS = 12000;
+/** Joining gives up after this long (ms) with a clear message, instead of "Joining…" forever. */
+export const JOIN_TIMEOUT_MS = 20000;
+/** A link that has not opened after this long (ms) is dropped and tried again. */
+const RETRY_MS = 6000;
+/** Connection attempts per join (a host that just came back online can miss the first one). */
+const MAX_TRIES = 3;
+/**
+ * Ways for two devices to find each other. Extra free public STUN servers (they only tell a device
+ * its own internet address), plus PeerJS's own free relay, which PeerJS uses by default.
+ */
+const ICE_SERVERS = [
+  { urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'] },
+  { urls: 'stun:stun.cloudflare.com:3478' },
+  { urls: ['turn:eu-0.turn.peerjs.com:3478', 'turn:us-0.turn.peerjs.com:3478'], username: 'peerjs', credential: 'peerjsp' },
+];
+const TIMEOUT_TEXT = "Could not reach your friend's party. Ask them to keep Luna open, then try again.";
+const LINK_TEXT = 'Your devices could not link up. Try the same Wi-Fi, then try again.';
 
 export type PartyStatus = 'idle' | 'connecting' | 'lobby' | 'playing' | 'error';
 
@@ -107,6 +126,10 @@ let unsubscribe: (() => void) | null = null;
 /** Host only: the votes on the current card, by member id. */
 let votes: Record<string, string> = {};
 let voteKey: string | null = null;
+/** Goes up on every reset, so callbacks from an old party or an old join attempt do nothing. */
+let session = 0;
+let signalRetry = 0;
+let signalDelay = 1000;
 
 const errorText = (type: string | undefined): string => {
   if (type === 'peer-unavailable') return 'No party with that code. Check the code and try again.';
@@ -119,24 +142,76 @@ const errorText = (type: string | undefined): string => {
 async function makePeer(id?: string): Promise<Peer> {
   const { Peer: PeerClass } = await import('peerjs');
   return new Promise((resolve, reject) => {
-    const p = id ? new PeerClass(id, { debug: 0 }) : new PeerClass({ debug: 0 });
+    const options = { debug: 0 as const, config: { iceServers: ICE_SERVERS } };
+    const p = id ? new PeerClass(id, options) : new PeerClass(options);
+    let timer = 0;
     const fail = (err: { type?: string }) => {
+      window.clearTimeout(timer);
+      p.off('open', ok);
       p.destroy();
       reject(err);
     };
-    p.once('open', () => {
+    const ok = () => {
+      window.clearTimeout(timer);
       p.off('error', fail);
       resolve(p);
-    });
+    };
+    timer = window.setTimeout(() => fail({ type: 'network' }), PEER_TIMEOUT_MS);
+    p.once('open', ok);
     p.once('error', fail);
   });
 }
+
+/**
+ * Reconnects to the PeerJS server after a drop (Wi-Fi blip, or a phone switching to another app to
+ * send the code). Without this the host's party code stops working and friends can never join.
+ */
+function reviveSignal() {
+  if (peer && peer.disconnected && !peer.destroyed) {
+    try {
+      peer.reconnect();
+    } catch {
+      // Still connecting; the next 'disconnected' or visibility change tries again.
+    }
+  }
+}
+function keepSignal(p: Peer) {
+  p.on('open', () => {
+    signalDelay = 1000;
+  });
+  p.on('disconnected', () => {
+    window.clearTimeout(signalRetry);
+    signalRetry = window.setTimeout(() => {
+      if (p === peer) reviveSignal();
+    }, signalDelay);
+    signalDelay = Math.min(signalDelay * 2, 8000);
+  });
+}
+if (typeof window !== 'undefined') {
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') reviveSignal();
+  });
+  window.addEventListener('online', reviveSignal);
+}
+
+/**
+ * Messages travel as JSON text on PeerJS's "binary" channel, which splits big messages into chunks.
+ * (PeerJS's "json" channel silently drops anything over 16 KB, such as a full game update.)
+ */
+const encode = (msg: Msg): string => JSON.stringify(msg);
+const decode = (raw: unknown): Msg | null => {
+  try {
+    return (typeof raw === 'string' ? JSON.parse(raw) : raw) as Msg;
+  } catch {
+    return null;
+  }
+};
 
 type GameState = ReturnType<typeof useGameStore.getState>;
 
 export const useParty = create<PartyStore>()((set, get) => {
   const send = (conn: DataConnection | null, msg: Msg) => {
-    if (conn?.open) conn.send(msg);
+    if (conn?.open) conn.send(encode(msg));
   };
   const broadcast = (msg: Msg) => conns.forEach((c) => send(c, msg));
   const roster = () => broadcast({ t: 'roster', members: get().members, status: get().status });
@@ -286,6 +361,9 @@ export const useParty = create<PartyStore>()((set, get) => {
     votes = {};
     voteKey = null;
     for (const k of Object.keys(remotePositions)) delete remotePositions[k];
+    window.clearTimeout(signalRetry);
+    signalDelay = 1000;
+    session++;
   };
 
   return {
@@ -300,6 +378,7 @@ export const useParty = create<PartyStore>()((set, get) => {
     create: async (rawName) => {
       const name = cleanName(rawName) || 'Commander';
       reset();
+      const mine = session;
       set({ status: 'connecting', error: null, isHost: true, members: [], voted: [] });
       let made: Peer | null = null;
       let code = '';
@@ -310,23 +389,38 @@ export const useParty = create<PartyStore>()((set, get) => {
         } catch (err) {
           const type = (err as { type?: string }).type;
           if (type !== 'unavailable-id') {
-            set({ status: 'error', error: errorText(type) });
+            if (session === mine) set({ status: 'error', error: errorText(type) });
             return;
           }
         }
+      }
+      if (session !== mine) {
+        made?.destroy();
+        return;
       }
       if (!made) {
         set({ status: 'error', error: errorText(undefined) });
         return;
       }
       peer = made;
+      keepSignal(made);
       const myId = made.id;
       set({ status: 'lobby', code, myId, members: [{ id: myId, name, role: 0, ready: true, host: true }] });
       made.on('connection', (conn) => {
         conn.on('data', (raw) => {
-          const msg = raw as Msg;
+          const msg = decode(raw);
+          if (!msg) return;
           const members = get().members;
           if (msg.t === 'hello') {
+            if (members.some((m) => m.id === conn.peer)) {
+              // The same friend tried again (their first link was slow): keep the newest link.
+              const old = conns.get(conn.peer);
+              conns.set(conn.peer, conn);
+              if (old && old !== conn) old.close();
+              roster();
+              if (get().status === 'playing') send(conn, { t: 'game', snap: snapshot() });
+              return;
+            }
             if (members.length >= MAX_CREW) {
               send(conn, { t: 'full' });
               window.setTimeout(() => conn.close(), 300);
@@ -338,7 +432,7 @@ export const useParty = create<PartyStore>()((set, get) => {
             set({ members: [...members, { id: conn.peer, name: cleanName(msg.name) || 'Astronaut', role, ready: false, host: false }] });
             roster();
             if (get().status === 'playing') send(conn, { t: 'game', snap: snapshot() });
-          } else if (!conns.has(conn.peer)) {
+          } else if (conns.get(conn.peer) !== conn) {
             return;
           } else if (msg.t === 'ready') {
             set({ members: members.map((m) => (m.id === conn.peer ? { ...m, ready: msg.ready } : m)) });
@@ -353,6 +447,8 @@ export const useParty = create<PartyStore>()((set, get) => {
           }
         });
         conn.on('close', () => {
+          // An old link from a friend who already reconnected: they are still in the crew.
+          if (conns.get(conn.peer) !== conn) return;
           conns.delete(conn.peer);
           delete remotePositions[conn.peer];
           delete votes[conn.peer];
@@ -362,8 +458,10 @@ export const useParty = create<PartyStore>()((set, get) => {
         });
       });
       made.on('error', (err) => {
-        if (err.type === 'network' || err.type === 'server-error') set({ error: errorText(err.type) });
+        if (err.type === 'network' || err.type === 'server-error' || err.type === 'socket-closed') set({ error: errorText(err.type) });
       });
+      // Back on the party service after a drop: friends can join again.
+      made.on('open', () => set({ error: null }));
       setActionGate(hostGate);
       startPositions();
     },
@@ -376,26 +474,99 @@ export const useParty = create<PartyStore>()((set, get) => {
         return;
       }
       reset();
+      const mine = session;
+      const live = () => session === mine;
       set({ status: 'connecting', error: null, isHost: false, code, members: [], voted: [] });
       let made: Peer;
       try {
         made = await makePeer();
       } catch (err) {
-        set({ status: 'error', error: errorText((err as { type?: string }).type) });
+        if (live()) set({ status: 'error', error: errorText((err as { type?: string }).type) });
+        return;
+      }
+      if (!live()) {
+        made.destroy();
         return;
       }
       peer = made;
+      keepSignal(made);
       set({ myId: made.id });
-      made.on('error', (err) => set({ status: 'error', error: errorText(err.type) }));
-      const conn = made.connect(PREFIX + code, { reliable: true, serialization: 'json' });
-      hostConn = conn;
-      conn.on('open', () => send(conn, { t: 'hello', name }));
-      conn.on('data', (raw) => {
-        const msg = raw as Msg;
+
+      const joined = () => get().status === 'lobby' || get().status === 'playing';
+      let tries = 0;
+      let retryTimer = 0;
+      const giveUp = (error: string) => {
+        if (!live() || joined()) return;
+        window.clearTimeout(retryTimer);
+        window.clearTimeout(joinTimer);
+        reset();
+        set({ status: 'error', error, myId: null, members: [] });
+      };
+      const joinTimer = window.setTimeout(() => giveUp(TIMEOUT_TEXT), JOIN_TIMEOUT_MS);
+      const retry = (ms: number) => {
+        window.clearTimeout(retryTimer);
+        if (tries < MAX_TRIES) retryTimer = window.setTimeout(attempt, ms);
+      };
+
+      made.on('error', (err) => {
+        // Once in the party, the direct link carries the game; a party-service hiccup does not matter.
+        if (!live() || joined()) return;
+        if (err.type === 'peer-unavailable') {
+          // The host may be coming back online (phone switched apps): look once more, then give up.
+          if (tries < 2) retry(1500);
+          else giveUp(errorText(err.type));
+        } else if (err.type === 'browser-incompatible') {
+          giveUp(errorText(err.type));
+        }
+        // Anything else: keepSignal reconnects, the retries try again and the join timeout gives up.
+      });
+
+      function attempt() {
+        if (!live() || joined()) return;
+        tries++;
+        const old = hostConn;
+        const conn = made.connect(PREFIX + code, { reliable: true, serialization: 'binary' });
+        hostConn = conn;
+        old?.close();
+        // Still not open after a while: drop this link and try a fresh one.
+        window.clearTimeout(retryTimer);
+        if (tries < MAX_TRIES)
+          retryTimer = window.setTimeout(() => {
+            if (!conn.open) attempt();
+          }, RETRY_MS);
+        conn.on('open', () => {
+          if (live() && conn === hostConn) send(conn, { t: 'hello', name });
+        });
+        conn.on('error', (err) => {
+          if (live() && conn === hostConn && !joined() && err.type === 'negotiation-failed') {
+            if (tries < MAX_TRIES) retry(500);
+            else giveUp(LINK_TEXT);
+          }
+        });
+        conn.on('data', (raw) => onData(conn, raw));
+        conn.on('close', () => {
+          if (!live() || conn !== hostConn) return;
+          if (!joined()) {
+            if (tries < MAX_TRIES) retry(800);
+            else giveUp(LINK_TEXT);
+            return;
+          }
+          set({ status: 'error', error: 'The host left the party.' });
+          setActionGate(null);
+          window.clearInterval(posTimer);
+        });
+      }
+
+      const onData = (conn: DataConnection, raw: unknown) => {
+        if (!live() || conn !== hostConn) return;
+        const msg = decode(raw);
+        if (!msg) return;
         if (msg.t === 'roster') {
-          set({ members: msg.members, status: msg.status === 'playing' ? 'playing' : 'lobby' });
+          window.clearTimeout(joinTimer);
+          window.clearTimeout(retryTimer);
+          set({ members: msg.members, status: msg.status === 'playing' ? 'playing' : 'lobby', error: null });
         } else if (msg.t === 'full') {
-          set({ status: 'error', error: 'That party is full (4 astronauts).' });
+          giveUp('That party is full (4 astronauts).');
         } else if (msg.t === 'positions') {
           const me = get().myId;
           for (const [id, p] of Object.entries(msg.all)) if (id !== me) remotePositions[id] = p;
@@ -408,12 +579,9 @@ export const useParty = create<PartyStore>()((set, get) => {
           useGameStore.setState({ ...(rest as unknown as Partial<GameState>), mission });
           if (get().status !== 'playing') set({ status: 'playing' });
         }
-      });
-      conn.on('close', () => {
-        if (get().status !== 'idle') set({ status: 'error', error: 'The host left the party.' });
-        setActionGate(null);
-        window.clearInterval(posTimer);
-      });
+      };
+
+      attempt();
       setActionGate(guestGate);
       startPositions();
     },
