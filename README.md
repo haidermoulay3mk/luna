@@ -1,6 +1,6 @@
 # Luna · Junior Astronaut Mission Trainer
 
-**Play online:** https://haidermoulay3mk.github.io/luna/
+**Play online:** https://luna-swart-phi.vercel.app
 
 
 **NASA Space Apps Challenge 2026 · Team Sol One · Sakhir, Bahrain**
