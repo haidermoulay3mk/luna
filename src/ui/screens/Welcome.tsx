@@ -51,7 +51,7 @@ export function Welcome({ crewSlot }: { crewSlot?: ReactNode }) {
       {/* mt-auto (not justify-end) keeps the column at the bottom and still lets short windows scroll. */}
       <div className="absolute inset-0 z-10 flex flex-col gap-4 overflow-y-auto p-4 pb-3 sm:p-6 lg:pb-5">
         <form onSubmit={submit} className="frame-in mt-auto w-full max-w-[34rem]">
-          <DataTag>Team Sol One · NASA Space Apps 2026</DataTag>
+          <DataTag>Team GWIN · NASA Space Apps 2026</DataTag>
           <h1 className="mt-3 font-title text-[clamp(64px,11vw,128px)] uppercase leading-none tracking-[0.06em] text-white">Luna</h1>
           <p className="mt-3 max-w-[30rem] font-display text-xl font-bold leading-snug text-ink">{GOAL_LINE}</p>
 

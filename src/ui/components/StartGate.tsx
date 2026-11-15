@@ -21,7 +21,7 @@ export function StartGate({ children }: { children: ReactNode }) {
   if (loading) return <LoadingTrailer onDone={() => setLoading(false)} />;
   return (
     <main className="start-gate fixed inset-0 flex flex-col items-center justify-center gap-8 bg-black px-4 text-center">
-      <p className="font-mono text-xs uppercase tracking-[0.3em] opacity-70">Team Sol One · NASA Space Apps 2026</p>
+      <p className="font-mono text-xs uppercase tracking-[0.3em] opacity-70">Team GWIN · NASA Space Apps 2026</p>
       <h1 className="text-5xl font-semibold tracking-wide sm:text-7xl">LUNA</h1>
       <p className="max-w-sm opacity-80">Junior Astronaut Mission Trainer</p>
       <PrimaryButton autoFocus hint="Enter" className="pulse-soft" onClick={() => setStarted(true)}>

@@ -54,7 +54,7 @@
     "org": "NASA",
     "url": "https://www.nasa.gov/reference/environmental-control-and-life-support-systems-eclss/",
     "usedFor": "Mission 2 Why? (oxygen, carbon dioxide, safe air)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-plants-in-space",
@@ -62,7 +62,7 @@
     "org": "NASA",
     "url": "https://www.nasa.gov/exploration-research-and-technology/growing-plants-in-space/",
     "usedFor": "Mission 4 Why? (vegetables grown on the ISS)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-lunar-dust",
@@ -70,7 +70,7 @@
     "org": "NASA",
     "url": "https://www.nasa.gov/image-article/nasas-dust-shield-successfully-repels-lunar-regolith-on-moon/",
     "usedFor": "Mission 5 Why? (dust shield tested on the Moon)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). Wording changed per B10."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). Wording changed per B10."
   },
   {
     "id": "nasa-solar-storms-moon",
@@ -78,7 +78,7 @@
     "org": "NASA",
     "url": "https://science.nasa.gov/science-research/heliophysics/how-nasa-will-protect-astronauts-from-space-radiation-at-the-moon/",
     "usedFor": "Mission 8 Why? (solar particles and shelters)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-solar-storm-effects",
@@ -86,7 +86,7 @@
     "org": "NASA",
     "url": "https://science.nasa.gov/sun/solar-storms-and-flares/",
     "usedFor": "Mission 14 Why? (solar storms, electronics, communications)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-cgi-moon-kit",
@@ -154,7 +154,7 @@
     "title": "NASA: Moon base systems",
     "url": "https://www.nasa.gov/moonbase-systems/",
     "usedFor": "Mission 1 and 14 Why? (power on a Moon base)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-moon-water",
@@ -162,7 +162,7 @@
     "title": "NASA Science: Moon water and ices",
     "url": "https://science.nasa.gov/moon/moon-water-and-ices/",
     "usedFor": "Mission 3 Why? (water ice in shadowed craters)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-rover-testing",
@@ -170,7 +170,7 @@
     "title": "NASA: Testing advanced capabilities for Moon and Mars rovers",
     "url": "https://www.nasa.gov/solar-system/moon/nasa-testing-advanced-capabilities-for-moon-mars-rovers/",
     "usedFor": "Mission 6 Why? (rover wheels and navigation)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). The page says rough terrain; \"dusty\" is only implied."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). The page says rough terrain; \"dusty\" is only implied."
   },
   {
     "id": "nasa-south-pole-shadows",
@@ -178,7 +178,7 @@
     "title": "NASA Science: Shadows near the Moon's south pole",
     "url": "https://science.nasa.gov/resource/shadows-near-the-moons-south-pole/",
     "usedFor": "Mission 7 Why? (long shadows at the south pole)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-lunar-comms",
@@ -186,7 +186,7 @@
     "title": "NASA Glenn: Lunar surface propagation",
     "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/scan/lunar-surface-propagation/",
     "usedFor": "Mission 9 Why? (Earth low on the horizon at the south pole)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-apollo-seismic",
@@ -194,7 +194,7 @@
     "title": "NASA Science: Apollo 11 seismic experiment",
     "url": "https://science.nasa.gov/resource/apollo-11-seismic-experiment/",
     "usedFor": "Mission 10 Why? (not used this weekend)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-moonquakes",
@@ -202,7 +202,7 @@
     "title": "NASA Science: Moonquakes",
     "url": "https://science.nasa.gov/moon/moonquakes/",
     "usedFor": "Mission 11 Why? (not used this weekend)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-spacesuits",
@@ -210,7 +210,7 @@
     "title": "NASA: Spacesuits",
     "url": "https://www.nasa.gov/humans-in-space/astronauts/spacesuits/",
     "usedFor": "Mission 12 Why? (cooling garment and radio)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). \"Oxygen\" dropped per B10."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). \"Oxygen\" dropped per B10."
   },
   {
     "id": "nasa-lunar-meteoroids",
@@ -218,7 +218,7 @@
     "title": "NASA Meteoroid Environment Office: Lunar meteoroid environment",
     "url": "https://www.nasa.gov/meteoroid-environment-office/lunar-meteoroid-environment/",
     "usedFor": "Mission 13 Why? (not used this weekend)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). Wording softened per B10."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10). Wording softened per B10."
   },
   {
     "id": "nasa-fitness-risk",
@@ -226,7 +226,7 @@
     "title": "NASA: Risk of reduced cardiorespiratory and musculoskeletal fitness",
     "url": "https://www.nasa.gov/reference/risk-of-reduced-cardiorespiratory-and-musculoskeletal-fitness/",
     "usedFor": "Mission 15 Why? (exercise in space)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-spacewalking-tools",
@@ -234,7 +234,7 @@
     "title": "NASA: Spacewalking tools",
     "url": "https://www.nasa.gov/suits-and-rovers/spacewalking-tools/",
     "usedFor": "Mission 16 Why? (not used this weekend)",
-    "checkedBy": "Team Sol One sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
+    "checkedBy": "Team GWIN sheet (TEAM_MISSIONS.md); link opened and live on 14 Nov 2026 (LUNA_BUILD B10)."
   },
   {
     "id": "nasa-mariner9-50-years",
