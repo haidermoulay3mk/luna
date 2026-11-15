@@ -10,6 +10,22 @@ the handoff zip contents are in `_handoff/`, ignored by git). Do these in order:
 3. Rules still apply: LUNA_BUILD A0 protocol, CLAUDE.md. The spec file is now `SPEC.md` (was README.md; README.md is the public GitHub page).
 4. NASA key: only in `.env` as `NASA_API_KEY=`, read only by `scripts/snapshot.mjs`. Never `VITE_`, never in browser code.
 
+## Session 3d (15 Nov, 20:40) · online party: "it says Joining, but you never join"
+All in `src/net/party.ts`; new `src/net/party.test.ts` (6 tests, fake PeerJS; 4 of them fail on the old code).
+- **Game updates over 16 KB were silently dropped**: PeerJS 1.5's `json` channel refuses them (bundler.mjs "Message too big for
+  JSON channel"). Now JSON text on the `binary` channel, which PeerJS splits into chunks.
+- **Host dropped off the PeerJS server** (Wi-Fi blip, phone switching to WhatsApp to send the code) never came back, so the code
+  stopped working. Now `peer.reconnect()` with back-off (1 s doubling to 8 s), plus on tab visible / back online.
+- **A hung link spun "Joining…" forever**: no timeout anywhere. Now a link not open after 6 s is replaced (3 tries), a
+  "no party" answer is checked once more, and after 20 s the guest sees "Could not reach your friend's party...".
+  The PeerJS server step also times out (12 s). The host keeps one entry per friend when a friend's link is retried.
+- After joining, a guest's party-service hiccup no longer throws them out (the direct link carries the game).
+- More free STUN servers (Google x3, Cloudflare) + PeerJS's free relay. No paid TURN. Very strict networks (some school or
+  mobile networks) can still fail; they now get a clear message instead of a hang.
+- Verified: `npm test` 174 passing, `npm run build`, `npm run build:usb`. NOT tested on two real devices.
+- Check with your eyes: two devices on the live link, ideally one on phone data: create, switch apps to send the code, come
+  back, friend joins, Start, the friend sees the mission.
+
 ## Session 3c (15 Nov, 09:20) Â· fixes from Boss's WhatsApp, done on another PC
 - **Mission screen lag and jerking**: `.glass` no longer blurs the live 3D behind it (backdrop blur re-blurred the moving scene
   every frame). Now a dark see-through frame (`bg-space-900/90`).
